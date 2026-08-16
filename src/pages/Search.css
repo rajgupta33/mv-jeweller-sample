@@ -1,0 +1,153 @@
+.search-page {
+  padding: 60px 0 100px;
+  background-color: var(--main-bg);
+  min-height: 60vh;
+}
+
+.search-header {
+  max-width: 800px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.search-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  padding: 16px 24px;
+  border: 1px solid var(--charcoal);
+  border-radius: 4px;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--charcoal);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--charcoal);
+  opacity: 0.5;
+}
+
+.search-submit {
+  background: var(--charcoal);
+  color: var(--white);
+  border: none;
+  padding: 0 32px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-submit:hover {
+  background: var(--deep-charcoal);
+}
+
+.search-results-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--soft-border);
+  padding-bottom: 16px;
+}
+
+.search-results-header h2 {
+  font-size: 1.5rem;
+  color: var(--charcoal);
+}
+
+.search-count {
+  font-size: 0.875rem;
+  color: var(--primary-text);
+  opacity: 0.8;
+}
+
+.search-empty {
+  text-align: center;
+  padding: 64px 0;
+}
+
+.search-empty h2 {
+  font-size: 2rem;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+
+.search-empty p {
+  color: var(--primary-text);
+  margin-bottom: 32px;
+}
+
+.search-empty-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.search-suggestions {
+  text-align: center;
+}
+
+.search-suggestions h3 {
+  font-size: 1rem;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.suggestion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.suggestion-tags button {
+  background: var(--white);
+  border: 1px solid var(--soft-border);
+  color: var(--primary-text);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.suggestion-tags button:hover {
+  border-color: var(--charcoal);
+  color: var(--charcoal);
+}

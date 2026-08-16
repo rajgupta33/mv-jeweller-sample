@@ -1,0 +1,143 @@
+.category-section {
+  background-color: var(--luxury-ivory);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-decoration {
+  color: var(--antique-gold);
+  font-size: 1.25rem;
+  opacity: 0.6;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  background-color: var(--warm-cream);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 200px;
+  border: 1px solid rgba(167, 153, 104, 0.1);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(43, 42, 40, 0.05);
+}
+
+.category-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.category-image {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.category-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.category-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  color: var(--charcoal);
+}
+
+.category-subtitle {
+  font-size: 0.75rem;
+  color: var(--charcoal);
+  opacity: 0.7;
+}
+
+.category-arrow {
+  margin-top: 8px;
+  color: var(--charcoal);
+  font-size: 1.25rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.category-card:hover .category-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+  .category-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 16px;
+    min-height: auto;
+    gap: 12px;
+  }
+
+  .category-image-wrapper {
+    flex: 0 0 80px;
+    margin-bottom: 0;
+  }
+
+  .category-image {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .category-content {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .category-card {
+    padding: 32px 24px;
+    min-height: 260px;
+  }
+
+  .category-image {
+    max-width: 160px;
+    max-height: 160px;
+  }
+}

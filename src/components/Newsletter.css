@@ -1,0 +1,117 @@
+.newsletter-section {
+  background-color: var(--warm-cream);
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle floral decoration using radial gradients or pseudo elements */
+.newsletter-section::before,
+.newsletter-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 C70 30, 90 50, 100 50 C90 50, 70 70, 50 100 C30 70, 10 50, 0 50 C10 50, 30 30, 50 0 Z" fill="rgba(167,153,104,0.05)"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.newsletter-section::before {
+  top: -50px;
+  left: -100px;
+  transform: rotate(45deg);
+}
+
+.newsletter-section::after {
+  bottom: -50px;
+  right: -100px;
+  transform: rotate(-135deg);
+}
+
+.newsletter-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-content {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+.newsletter-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.newsletter-text {
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newsletter-input {
+  padding: 14px 20px;
+  border: 1px solid rgba(167, 153, 104, 0.4);
+  background-color: transparent;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.3s;
+  flex: 1;
+  min-width: 200px;
+}
+
+.newsletter-input::placeholder {
+  color: rgba(43, 42, 40, 0.5);
+}
+
+.newsletter-input:focus {
+  border-color: var(--antique-gold);
+}
+
+.newsletter-btn {
+  background-color: var(--antique-gold);
+  border-color: var(--antique-gold);
+  padding: 14px 32px;
+}
+
+.newsletter-btn:hover {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+@media (min-width: 768px) {
+  .newsletter-form {
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .newsletter-input {
+    flex: 1;
+    max-width: 350px;
+  }
+  
+  .newsletter-btn {
+    flex-shrink: 0;
+  }
+}

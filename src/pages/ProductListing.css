@@ -1,0 +1,151 @@
+.plp-page {
+  padding: 40px 0;
+  background-color: var(--main-bg);
+}
+
+.plp-header {
+  margin-bottom: 32px;
+}
+
+.plp-title {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.plp-desc {
+  font-size: 1rem;
+  color: var(--primary-text);
+  max-width: 600px;
+}
+
+.plp-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--soft-border);
+  margin-bottom: 32px;
+}
+
+.plp-count {
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  opacity: 0.8;
+}
+
+.plp-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-filter-mobile {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+}
+
+.plp-sort {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.plp-sort label {
+  font-size: 0.75rem;
+  color: var(--charcoal);
+  letter-spacing: 0.1em;
+}
+
+.sort-select {
+  border: none;
+  background: transparent;
+  font-size: 0.75rem;
+  color: var(--charcoal);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Layout */
+.plp-layout {
+  display: flex;
+  gap: 40px;
+}
+
+.plp-sidebar {
+  flex: 0 0 240px;
+}
+
+.plp-main {
+  flex: 1;
+}
+
+/* Filters */
+.filter-group {
+  margin-bottom: 32px;
+}
+
+.filter-title {
+  font-size: 0.875rem;
+  color: var(--charcoal);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 8px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: var(--primary-text);
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.filter-option input[type="checkbox"] {
+  accent-color: var(--charcoal);
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile */
+@media (max-width: 1023px) {
+  .plp-layout {
+    flex-direction: column;
+  }
+  
+  .plp-sidebar {
+    display: none; /* In a real app, this would be a slide-over modal */
+  }
+  
+  .plp-sidebar.open {
+    display: block;
+    margin-bottom: 24px;
+  }
+  
+  .btn-filter-mobile {
+    display: block;
+  }
+  
+  .plp-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .plp-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
