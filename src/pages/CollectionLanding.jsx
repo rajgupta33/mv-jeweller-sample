@@ -47,7 +47,22 @@ function CollectionLanding() {
     subtitle = `Explore our stunning ${formattedId.toLowerCase()} collection.`;
     description = `Discover our carefully curated selection of ${formattedId.toLowerCase()}, designed for effortless styling and memorable gifting.`;
     buttonText = `SHOP ${formattedId.toUpperCase()}`;
+    
+    // Default to a bracelet image, but override for specific categories
     heroImage = "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1600&q=80";
+    
+    if (id === 'necklaces') {
+      heroImage = "https://images.unsplash.com/photo-1599643478514-4a4208a0d4db?auto=format&fit=crop&w=1600&q=80";
+    } else if (id === 'rings') {
+      heroImage = "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=1600&q=80";
+    } else if (id === 'earrings') {
+      heroImage = "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1600&q=80";
+    } else if (id === 'gifts') {
+      heroImage = "https://images.unsplash.com/photo-1549439602-43ebca2327af?auto=format&fit=crop&w=1600&q=80";
+    } else if (id === 'new-arrivals') {
+      heroImage = "https://images.unsplash.com/photo-1515562141589-67f0d727b750?auto=format&fit=crop&w=1600&q=80";
+    }
+
     categories = [
       { title: "Gold Collection", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-jewellery", img: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?auto=format&fit=crop&w=600&q=80" },
       { title: "Silver Collection", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-jewellery", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
