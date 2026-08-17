@@ -20,9 +20,7 @@
 .hero-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5; /* Taller on mobile for better presentation */
-  object-fit: cover;
-  object-position: center;
+  display: block;
 }
 
 /* Content */
@@ -135,6 +133,7 @@
   .hero-image {
     height: 100%;
     aspect-ratio: auto;
+    object-fit: cover;
     object-position: right center;
   }
 
