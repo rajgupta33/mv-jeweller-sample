@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import CartDrawer from './components/CartDrawer';
 
+import BulkOrders from './pages/BulkOrders';
 import Account from './pages/Account';
 import Collections from './pages/Collections';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="collections/:id" element={<CollectionLanding />} />
           <Route path="collections/:id/all" element={<ProductListing />} />
           <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="pages/bulk-orders" element={<BulkOrders />} />
           <Route path="search" element={<Search />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="account" element={<Account />} />
