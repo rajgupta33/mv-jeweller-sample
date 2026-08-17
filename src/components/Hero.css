@@ -140,6 +140,7 @@
   }
 
   .hero-content {
+    flex: none;
     width: 45%;
     padding: 80px 0;
     background: transparent;
@@ -162,6 +163,7 @@
 
   .hero-ctas {
     flex-direction: row;
+    max-width: 480px;
   }
   
   .hero-trust {
