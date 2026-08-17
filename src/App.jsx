@@ -14,6 +14,7 @@ import CartDrawer from './components/CartDrawer';
 import BulkOrders from './pages/BulkOrders';
 import Account from './pages/Account';
 import Collections from './pages/Collections';
+import Maintenance from './pages/Maintenance';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -23,16 +24,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout onOpenCart={() => setIsCartOpen(true)} />}>
           <Route index element={<Home />} />
-          <Route path="collections" element={<Collections />} />
-          <Route path="collections/:id" element={<CollectionLanding />} />
-          <Route path="collections/:id/all" element={<ProductListing />} />
-          <Route path="products/:id" element={<ProductDetail />} />
+          <Route path="collections" element={<Maintenance />} />
+          <Route path="collections/:id" element={<Maintenance />} />
+          <Route path="collections/:id/all" element={<Maintenance />} />
+          <Route path="products/:id" element={<Maintenance />} />
           <Route path="pages/bulk-orders" element={<BulkOrders />} />
-          <Route path="search" element={<Search />} />
-          <Route path="wishlist" element={<Wishlist />} />
-          <Route path="account" element={<Account />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="search" element={<Maintenance />} />
+          <Route path="wishlist" element={<Maintenance />} />
+          <Route path="account" element={<Maintenance />} />
+          <Route path="cart" element={<Maintenance />} />
+          <Route path="*" element={<Maintenance />} />
         </Route>
       </Routes>
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
