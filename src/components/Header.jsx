@@ -40,6 +40,7 @@ function Header({ onOpenCart }) {
             <li><Link to="/collections/earrings" onClick={() => setIsMobileMenuOpen(false)}>EARRINGS</Link></li>
             <li><Link to="/collections/gifts" onClick={() => setIsMobileMenuOpen(false)}>GIFTS</Link></li>
             <li><Link to="/collections/all" onClick={() => setIsMobileMenuOpen(false)}>COLLECTIONS</Link></li>
+            <li><a href="mailto:sales@mvornaments.com" onClick={() => setIsMobileMenuOpen(false)}>BULK ORDER</a></li>
           </ul>
         </nav>
 

@@ -15,9 +15,17 @@
 .rate-ticker {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
   gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.rate-ticker::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .rate-icon {
@@ -48,5 +56,11 @@
   color: var(--antique-gold);
   opacity: 0.3;
   margin: 0 4px;
+}
+
+@media (min-width: 768px) {
+  .rate-ticker {
+    justify-content: center;
+  }
 }
 
