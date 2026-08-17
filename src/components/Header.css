@@ -3,7 +3,8 @@
   color: var(--champagne-gold);
   padding: 16px 0;
   border-bottom: 1px solid rgba(201, 185, 133, 0.2);
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 100;
 }
 

@@ -7,33 +7,60 @@ import './CollectionLanding.css';
 function CollectionLanding() {
   const { id } = useParams();
   
-  // Dummy data switch based on id
-  const isGold = id === 'gold-jewellery';
-  
-  const title = isGold ? "Gold Jewellery" : "Silver Jewellery";
-  const subtitle = isGold ? "Made for moments that last." : "Modern silver, made for every day.";
-  const description = isGold 
-    ? "Discover timeless gold jewellery created for celebrations, milestones and everyday elegance."
-    : "Discover elegant 925 sterling silver jewellery designed to move effortlessly from everyday moments to meaningful occasions.";
-  const buttonText = isGold ? "EXPLORE GOLD" : "SHOP ALL SILVER";
-  
-  const categories = isGold ? [
-    { title: "Gold Rings", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-rings", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
-    { title: "Gold Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/gold-necklaces", img: "https://images.unsplash.com/photo-1599643478514-4a4208a0d4db?auto=format&fit=crop&w=600&q=80" },
-    { title: "Gold Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/gold-earrings", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
-    { title: "Gold Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/gold-bracelets", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" }
-  ] : [
-    { title: "Silver Rings", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-rings", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
-    { title: "Silver Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/silver-necklaces", img: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=600&q=80" },
-    { title: "Silver Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/silver-earrings", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
-    { title: "Silver Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/silver-bracelets", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" }
-  ];
+  let title = "";
+  let subtitle = "";
+  let description = "";
+  let buttonText = "";
+  let categories = [];
+  let isGold = false;
+  let heroImage = "";
+
+  if (id === 'gold-jewellery') {
+    isGold = true;
+    title = "Gold Jewellery";
+    subtitle = "Made for moments that last.";
+    description = "Discover timeless gold jewellery created for celebrations, milestones and everyday elegance.";
+    buttonText = "EXPLORE GOLD";
+    heroImage = "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=80";
+    categories = [
+      { title: "Gold Rings", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-rings", img: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?auto=format&fit=crop&w=600&q=80" },
+      { title: "Gold Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/gold-necklaces", img: "https://images.unsplash.com/photo-1515562141589-67f0d727b750?auto=format&fit=crop&w=600&q=80" },
+      { title: "Gold Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/gold-earrings", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80" },
+      { title: "Gold Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/gold-bracelets", img: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=600&q=80" }
+    ];
+  } else if (id === 'silver-jewellery') {
+    isGold = false;
+    title = "Silver Jewellery";
+    subtitle = "Modern silver, made for every day.";
+    description = "Discover elegant 925 sterling silver jewellery designed to move effortlessly from everyday moments to meaningful occasions.";
+    buttonText = "SHOP ALL SILVER";
+    heroImage = "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=1600&q=80";
+    categories = [
+      { title: "Silver Rings", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-rings", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
+      { title: "Silver Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/silver-necklaces", img: "https://images.unsplash.com/photo-1599643478514-4a4208a0d4db?auto=format&fit=crop&w=600&q=80" },
+      { title: "Silver Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/silver-earrings", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
+      { title: "Silver Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/silver-bracelets", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" }
+    ];
+  } else {
+    const formattedId = id ? id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : 'Collection';
+    title = formattedId;
+    subtitle = `Explore our stunning ${formattedId.toLowerCase()} collection.`;
+    description = `Discover our carefully curated selection of ${formattedId.toLowerCase()}, designed for effortless styling and memorable gifting.`;
+    buttonText = `SHOP ${formattedId.toUpperCase()}`;
+    heroImage = "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=1600&q=80";
+    categories = [
+      { title: "Gold Collection", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-jewellery", img: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?auto=format&fit=crop&w=600&q=80" },
+      { title: "Silver Collection", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-jewellery", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
+      { title: "New Arrivals", desc: "Freshly added designs.", link: "/collections/new-arrivals", img: "https://images.unsplash.com/photo-1515562141589-67f0d727b750?auto=format&fit=crop&w=600&q=80" },
+      { title: "Gifts", desc: "Perfect pieces for your loved ones.", link: "/collections/gifts", img: "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=600&q=80" }
+    ];
+  }
 
   return (
     <div className={`collection-landing ${isGold ? 'theme-gold' : 'theme-silver'}`}>
       
       {/* Hero Section */}
-      <section className="clp-hero">
+      <section className="clp-hero" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="clp-hero-content">
           <h1 className="clp-hero-title">{title}</h1>
           <h2 className="clp-hero-subtitle">{subtitle}</h2>

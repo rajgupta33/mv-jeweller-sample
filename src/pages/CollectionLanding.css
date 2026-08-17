@@ -13,13 +13,18 @@
   background-color: var(--charcoal);
   color: var(--luxury-ivory);
   position: relative;
-  /* Dummy background color / gradient until images are ready */
-  background: linear-gradient(to bottom, var(--charcoal), var(--deep-charcoal));
+}
+
+.clp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .theme-gold .clp-hero {
-  background: linear-gradient(to bottom, #d4c4a8, #bba786); /* Champagne / Warm stone */
-  color: var(--charcoal);
+  color: var(--luxury-ivory); /* Keep light text due to overlay */
 }
 
 .clp-hero-content {
