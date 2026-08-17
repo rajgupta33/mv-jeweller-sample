@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './GiftBanner.css';
 import { getImageUrl } from '../utils/image-util';
 
@@ -15,7 +16,7 @@ function GiftBanner() {
               Beautifully packaged. Thoughtfully delivered. Celebrate birthdays, anniversaries, milestones, and meaningful little moments.
             </p>
             <div className="gift-actions">
-              <a href="/collections/gifts" className="btn-primary">EXPLORE GIFTS</a>
+              <Link to="/collections/gifts" className="btn-primary">EXPLORE GIFTS</Link>
             </div>
           </div>
           <div className="gift-image-wrapper">

@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Hero.css';
 import { getImageUrl } from '../utils/image-util';
 
 function Hero() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const mobileImages = [
+    "/banner-mobile.png",
+    "/b2.png",
+    "/b3.png"
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % mobileImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [mobileImages.length]);
+
   return (
     <section className="hero">
       <div className="hero-grid container">
@@ -10,11 +24,24 @@ function Hero() {
         {/* Top Image Side */}
         <div className="hero-image-wrapper">
           <picture>
-            <source media="(max-width: 1023px)" srcSet={getImageUrl("/banner-mobile.png")} />
+            <source media="(max-width: 1023px)" srcSet={getImageUrl(mobileImages[currentSlide])} />
             <source media="(min-width: 1024px)" srcSet={getImageUrl("/banner-image.png")} />
-            <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
+            {/* The img tag renders the image and we use a key to force re-render on mobile so it can transition or simply update src */}
+            <img key={currentSlide} src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image fade-in" />
           </picture>
           <div className="hero-gradient-overlay"></div>
+          
+          {/* Slider Indicators (Mobile Only) */}
+          <div className="hero-slider-dots">
+            {mobileImages.map((_, index) => (
+              <button 
+                key={index} 
+                className={`slider-dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
         
         {/* Floating Content Card */}
