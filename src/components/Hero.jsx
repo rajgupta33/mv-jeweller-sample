@@ -41,8 +41,11 @@ function Hero() {
 
         {/* Right Image Side */}
         <div className="hero-image-wrapper">
-          {/* We use the banner image provided in the root directory */}
-          <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
+          <picture>
+            <source media="(max-width: 1023px)" srcSet={getImageUrl("/banner-mobile.png")} />
+            <source media="(min-width: 1024px)" srcSet={getImageUrl("/banner-image.png")} />
+            <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
+          </picture>
         </div>
 
       </div>
