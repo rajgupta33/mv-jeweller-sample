@@ -19,7 +19,7 @@ function CollectionBanners() {
           </div>
           <div className="collection-image-wrapper">
             {/* Example fallback if no exact image found, we use one from product sku */}
-            <img src="/product sku/ChatGPT Image Aug 16, 2026, 12_25_46 PM (7).png" alt="Silver Collection" className="collection-image" />
+            <img src="/product-sku/product-7.png" alt="Silver Collection" className="collection-image" />
           </div>
         </div>
 
@@ -35,7 +35,7 @@ function CollectionBanners() {
             </a>
           </div>
           <div className="collection-image-wrapper">
-            <img src="/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (7).png" alt="Gold Collection" className="collection-image" />
+            <img src="/product-sku/product-14.png" alt="Gold Collection" className="collection-image" />
           </div>
         </div>
 

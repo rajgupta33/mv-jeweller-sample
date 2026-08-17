@@ -11,12 +11,12 @@ const InstagramIcon = ({ size = 20 }) => (
 
 // Use product images as lifestyle gallery
 const galleryImages = [
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png',
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png',
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png',
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png',
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (1).png',
-  '/product sku/ChatGPT Image Aug 16, 2026, 12_25_44 PM (5).png',
+  '/product-sku/product-8.png',
+  '/product-sku/product-9.png',
+  '/product-sku/product-10.png',
+  '/product-sku/product-11.png',
+  '/product-sku/product-1.png',
+  '/product-sku/product-5.png',
 ];
 
 function InstagramGallery() {

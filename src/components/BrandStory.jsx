@@ -22,7 +22,7 @@ function BrandStory() {
           
           <div className="brand-story-image-wrapper">
             {/* Example image from the sku folder for the brand story */}
-            <img src="/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (1).png" alt="M.V Ornaments Craftsmanship" className="brand-story-image" />
+            <img src="/product-sku/product-1.png" alt="M.V Ornaments Craftsmanship" className="brand-story-image" />
           </div>
         </div>
 

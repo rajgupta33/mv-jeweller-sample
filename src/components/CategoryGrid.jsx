@@ -5,25 +5,25 @@ const categories = [
   {
     title: 'RINGS',
     subtitle: 'Timeless Elegance',
-    image: '/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (2).png',
+    image: '/product-sku/product-2.png',
     link: '/collections/rings'
   },
   {
     title: 'NECKLACES',
     subtitle: 'Grace in Every Detail',
-    image: '/product sku/ChatGPT Image Aug 16, 2026, 12_25_44 PM (5).png',
+    image: '/product-sku/product-5.png',
     link: '/collections/necklaces'
   },
   {
     title: 'EARRINGS',
     subtitle: 'Subtle. Stylish. Stunning.',
-    image: '/product sku/ChatGPT Image Aug 16, 2026, 12_25_45 PM (6).png',
+    image: '/product-sku/product-6.png',
     link: '/collections/earrings'
   },
   {
     title: 'BRACELETS',
     subtitle: 'Effortless Sophistication',
-    image: '/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png',
+    image: '/product-sku/product-8.png',
     link: '/collections/bracelets'
   }
 ];

@@ -19,7 +19,7 @@ function GiftBanner() {
           </div>
           <div className="gift-image-wrapper">
             {/* Example image from the sku folder for the gift banner */}
-            <img src="/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png" alt="Luxurious Gifts" className="gift-image" />
+            <img src="/product-sku/product-10.png" alt="Luxurious Gifts" className="gift-image" />
           </div>
         </div>
 

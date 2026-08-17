@@ -4,13 +4,13 @@ export const dummyProducts = [
     name: "Silver Leaf Pendant",
     price: 1699,
     compareAtPrice: 2199,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
+    image: "/product-sku/product-8.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png"
+      "/product-sku/product-8.png",
+      "/product-sku/product-9.png",
+      "/product-sku/product-10.png",
+      "/product-sku/product-11.png",
+      "/product-sku/product-12.png"
     ],
     link: "/products/silver-leaf-pendant",
     isNew: true,
@@ -25,13 +25,13 @@ export const dummyProducts = [
     name: "Silver Moon Pendant",
     price: 1899,
     compareAtPrice: 2399,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
+    image: "/product-sku/product-9.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (6).png"
+      "/product-sku/product-9.png",
+      "/product-sku/product-10.png",
+      "/product-sku/product-11.png",
+      "/product-sku/product-12.png",
+      "/product-sku/product-13.png"
     ],
     link: "/products/silver-moon-pendant",
     isNew: true,
@@ -46,13 +46,13 @@ export const dummyProducts = [
     name: "Emerald Bloom Ring",
     price: 2499,
     compareAtPrice: 3299,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png",
+    image: "/product-sku/product-11.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (6).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (7).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (1).png"
+      "/product-sku/product-11.png",
+      "/product-sku/product-12.png",
+      "/product-sku/product-13.png",
+      "/product-sku/product-14.png",
+      "/product-sku/product-1.png"
     ],
     link: "/products/emerald-bloom-silver-ring",
     isNew: false,
@@ -67,13 +67,13 @@ export const dummyProducts = [
     name: "Silver Bow Pendant",
     price: 1599,
     compareAtPrice: 1999,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png",
+    image: "/product-sku/product-12.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (6).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (7).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (1).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (2).png"
+      "/product-sku/product-12.png",
+      "/product-sku/product-13.png",
+      "/product-sku/product-14.png",
+      "/product-sku/product-1.png",
+      "/product-sku/product-2.png"
     ],
     link: "/products/silver-bow-pendant",
     isNew: false,
@@ -88,13 +88,13 @@ export const dummyProducts = [
     name: "Classic Silver Band",
     price: 1299,
     compareAtPrice: null,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (2).png",
+    image: "/product-sku/product-2.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_43 PM (3).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_44 PM (4).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_44 PM (5).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_45 PM (6).png"
+      "/product-sku/product-2.png",
+      "/product-sku/product-3.png",
+      "/product-sku/product-4.png",
+      "/product-sku/product-5.png",
+      "/product-sku/product-6.png"
     ],
     link: "/products/classic-silver-band",
     isNew: true,
@@ -109,13 +109,13 @@ export const dummyProducts = [
     name: "Sapphire Drop Earrings",
     price: 3499,
     compareAtPrice: 4299,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_25_45 PM (6).png",
+    image: "/product-sku/product-6.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_45 PM (6).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_46 PM (7).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png"
+      "/product-sku/product-6.png",
+      "/product-sku/product-7.png",
+      "/product-sku/product-8.png",
+      "/product-sku/product-9.png",
+      "/product-sku/product-10.png"
     ],
     link: "/products/sapphire-drop-earrings",
     isNew: false,
@@ -130,13 +130,13 @@ export const dummyProducts = [
     name: "Ruby Halo Ring",
     price: 2999,
     compareAtPrice: 3899,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_25_46 PM (7).png",
+    image: "/product-sku/product-7.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_25_46 PM (7).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png"
+      "/product-sku/product-7.png",
+      "/product-sku/product-8.png",
+      "/product-sku/product-9.png",
+      "/product-sku/product-10.png",
+      "/product-sku/product-11.png"
     ],
     link: "/products/ruby-halo-ring",
     isNew: false,
@@ -151,13 +151,13 @@ export const dummyProducts = [
     name: "Delicate Chain Bracelet",
     price: 1899,
     compareAtPrice: null,
-    image: "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
+    image: "/product-sku/product-8.png",
     images: [
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_16 PM (1).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (2).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (3).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_17 PM (4).png",
-      "/product sku/ChatGPT Image Aug 16, 2026, 12_26_18 PM (5).png"
+      "/product-sku/product-8.png",
+      "/product-sku/product-9.png",
+      "/product-sku/product-10.png",
+      "/product-sku/product-11.png",
+      "/product-sku/product-12.png"
     ],
     link: "/products/delicate-chain-bracelet",
     isNew: true,
