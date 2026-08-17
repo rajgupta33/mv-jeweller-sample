@@ -1,30 +1,31 @@
 import React from 'react';
 import './CategoryGrid.css';
+import { getImageUrl } from '../utils/image-util';
 
 const categories = [
   {
     title: 'RINGS',
     subtitle: 'Timeless Elegance',
-    image: '/product-sku/product-2.png',
-    link: '/collections/rings'
+    image: getImageUrl("/product-sku/product-2.png"),
+    link: getImageUrl("/collections/rings")
   },
   {
     title: 'NECKLACES',
     subtitle: 'Grace in Every Detail',
-    image: '/product-sku/product-5.png',
-    link: '/collections/necklaces'
+    image: getImageUrl("/product-sku/product-5.png"),
+    link: getImageUrl("/collections/necklaces")
   },
   {
     title: 'EARRINGS',
     subtitle: 'Subtle. Stylish. Stunning.',
-    image: '/product-sku/product-6.png',
-    link: '/collections/earrings'
+    image: getImageUrl("/product-sku/product-6.png"),
+    link: getImageUrl("/collections/earrings")
   },
   {
     title: 'BRACELETS',
     subtitle: 'Effortless Sophistication',
-    image: '/product-sku/product-8.png',
-    link: '/collections/bracelets'
+    image: getImageUrl("/product-sku/product-8.png"),
+    link: getImageUrl("/collections/bracelets")
   }
 ];
 

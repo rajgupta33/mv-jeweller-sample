@@ -1,5 +1,6 @@
 import React from 'react';
 import './InstagramGallery.css';
+import { getImageUrl } from '../utils/image-util';
 
 const InstagramIcon = ({ size = 20 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -11,12 +12,12 @@ const InstagramIcon = ({ size = 20 }) => (
 
 // Use product images as lifestyle gallery
 const galleryImages = [
-  '/product-sku/product-8.png',
-  '/product-sku/product-9.png',
-  '/product-sku/product-10.png',
-  '/product-sku/product-11.png',
-  '/product-sku/product-1.png',
-  '/product-sku/product-5.png',
+  getImageUrl("/product-sku/product-8.png"),
+  getImageUrl("/product-sku/product-9.png"),
+  getImageUrl("/product-sku/product-10.png"),
+  getImageUrl("/product-sku/product-11.png"),
+  getImageUrl("/product-sku/product-1.png"),
+  getImageUrl("/product-sku/product-5.png"),
 ];
 
 function InstagramGallery() {

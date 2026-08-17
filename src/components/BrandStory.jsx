@@ -1,5 +1,6 @@
 import React from 'react';
 import './BrandStory.css';
+import { getImageUrl } from '../utils/image-util';
 
 function BrandStory() {
   return (
@@ -22,7 +23,7 @@ function BrandStory() {
           
           <div className="brand-story-image-wrapper">
             {/* Example image from the sku folder for the brand story */}
-            <img src="/product-sku/product-1.png" alt="M.V Ornaments Craftsmanship" className="brand-story-image" />
+            <img src={getImageUrl("/product-sku/product-1.png")} alt="M.V Ornaments Craftsmanship" className="brand-story-image" />
           </div>
         </div>
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, User, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import './Header.css';
+import { getImageUrl } from '../utils/image-util';
 
 function Header({ onOpenCart }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ function Header({ onOpenCart }) {
 
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src="/mv-transparent-logo.png" alt="M.V Ornaments" className="logo-img" />
+          <img src={getImageUrl("/mv-transparent-logo.png")} alt="M.V Ornaments" className="logo-img" />
           <div className="logo-text">
             <span className="logo-title">M.V ORNAMENTS</span>
             <span className="logo-subtitle">QUALITY WITH CREATIVITY</span>

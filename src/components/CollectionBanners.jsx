@@ -1,5 +1,6 @@
 import React from 'react';
 import './CollectionBanners.css';
+import { getImageUrl } from '../utils/image-util';
 
 function CollectionBanners() {
   return (
@@ -19,7 +20,7 @@ function CollectionBanners() {
           </div>
           <div className="collection-image-wrapper">
             {/* Example fallback if no exact image found, we use one from product sku */}
-            <img src="/product-sku/product-7.png" alt="Silver Collection" className="collection-image" />
+            <img src={getImageUrl("/product-sku/product-7.png")} alt="Silver Collection" className="collection-image" />
           </div>
         </div>
 
@@ -35,7 +36,7 @@ function CollectionBanners() {
             </a>
           </div>
           <div className="collection-image-wrapper">
-            <img src="/product-sku/product-14.png" alt="Gold Collection" className="collection-image" />
+            <img src={getImageUrl("/product-sku/product-14.png")} alt="Gold Collection" className="collection-image" />
           </div>
         </div>
 

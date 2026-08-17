@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { getImageUrl } from '../utils/image-util';
 
 const Instagram = ({ size = 20, strokeWidth = 1.5 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
@@ -29,7 +30,7 @@ function Footer() {
           
           <div className="footer-brand">
             <a href="/" className="logo footer-logo">
-              <img src="/mv-transparent-logo.png" alt="M.V Ornaments" className="logo-img" />
+              <img src={getImageUrl("/mv-transparent-logo.png")} alt="M.V Ornaments" className="logo-img" />
               <div className="logo-text">
                 <span className="logo-title">M.V ORNAMENTS</span>
                 <span className="logo-subtitle">QUALITY WITH CREATIVITY</span>

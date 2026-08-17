@@ -1,5 +1,6 @@
 import React from 'react';
 import './GiftBanner.css';
+import { getImageUrl } from '../utils/image-util';
 
 function GiftBanner() {
   return (
@@ -19,7 +20,7 @@ function GiftBanner() {
           </div>
           <div className="gift-image-wrapper">
             {/* Example image from the sku folder for the gift banner */}
-            <img src="/product-sku/product-10.png" alt="Luxurious Gifts" className="gift-image" />
+            <img src={getImageUrl("/product-sku/product-10.png")} alt="Luxurious Gifts" className="gift-image" />
           </div>
         </div>
 

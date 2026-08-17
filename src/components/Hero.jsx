@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import { getImageUrl } from '../utils/image-util';
 
 function Hero() {
   return (
@@ -41,7 +42,7 @@ function Hero() {
         {/* Right Image Side */}
         <div className="hero-image-wrapper">
           {/* We use the banner image provided in the root directory */}
-          <img src="/banner-image.png" alt="Modern Silver Jewellery Collection" className="hero-image" />
+          <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
         </div>
 
       </div>
