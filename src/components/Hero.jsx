@@ -7,7 +7,17 @@ function Hero() {
     <section className="hero">
       <div className="hero-grid container">
         
-        {/* Left Copy Side */}
+        {/* Top Image Side */}
+        <div className="hero-image-wrapper">
+          <picture>
+            <source media="(max-width: 1023px)" srcSet={getImageUrl("/banner-mobile.png")} />
+            <source media="(min-width: 1024px)" srcSet={getImageUrl("/banner-image.png")} />
+            <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
+          </picture>
+          <div className="hero-gradient-overlay"></div>
+        </div>
+        
+        {/* Floating Content Card */}
         <div className="hero-content">
           <div className="hero-eyebrow">TIMELESS ELEGANCE</div>
           <h1 className="hero-title">
@@ -22,30 +32,22 @@ function Hero() {
             <a href="/collections/silver-jewellery" className="btn-primary">SHOP SILVER</a>
             <a href="/collections/gold-jewellery" className="btn-outline-light hero-gold-btn">EXPLORE GOLD</a>
           </div>
-
-          <div className="hero-trust">
-            <div className="trust-item">
-              <span className="trust-icon">✔</span>
-              925 Sterling Silver
-            </div>
-            <div className="trust-item">
-              <span className="trust-icon">✧</span>
-              Premium Craftsmanship
-            </div>
-            <div className="trust-item">
-              <span className="trust-icon">🔒</span>
-              Secure Shopping
-            </div>
-          </div>
         </div>
 
-        {/* Right Image Side */}
-        <div className="hero-image-wrapper">
-          <picture>
-            <source media="(max-width: 1023px)" srcSet={getImageUrl("/banner-mobile.png")} />
-            <source media="(min-width: 1024px)" srcSet={getImageUrl("/banner-image.png")} />
-            <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image" />
-          </picture>
+        {/* Trust Badges */}
+        <div className="hero-trust">
+          <div className="trust-item">
+            <span className="trust-icon">✓</span>
+            925 Sterling Silver
+          </div>
+          <div className="trust-item">
+            <span className="trust-icon">✦</span>
+            Premium Craftsmanship
+          </div>
+          <div className="trust-item">
+            <span className="trust-icon">🔒</span>
+            Secure Shopping
+          </div>
         </div>
 
       </div>
