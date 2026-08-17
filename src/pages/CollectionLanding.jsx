@@ -97,7 +97,7 @@ function CollectionLanding() {
                 <div className="clp-category-info">
                   <h3 className="clp-category-title">{cat.title}</h3>
                   <p className="clp-category-desc">{cat.desc}</p>
-                  <span className="clp-category-link">EXPLORE {cat.title.split(' ')[1].toUpperCase()} &rarr;</span>
+                  <span className="clp-category-link">EXPLORE {cat.title.split(' ').pop().toUpperCase()} &rarr;</span>
                 </div>
               </Link>
             ))}
