@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CategoryGrid.css';
 import { getImageUrl } from '../utils/image-util';
 
@@ -7,25 +8,25 @@ const categories = [
     title: 'RINGS',
     subtitle: 'Timeless Elegance',
     image: getImageUrl("/product-sku/product-2.png"),
-    link: getImageUrl("/collections/rings")
+    link: "/collections/rings"
   },
   {
     title: 'NECKLACES',
     subtitle: 'Grace in Every Detail',
     image: getImageUrl("/product-sku/product-5.png"),
-    link: getImageUrl("/collections/necklaces")
+    link: "/collections/necklaces"
   },
   {
     title: 'EARRINGS',
     subtitle: 'Subtle. Stylish. Stunning.',
     image: getImageUrl("/product-sku/product-6.png"),
-    link: getImageUrl("/collections/earrings")
+    link: "/collections/earrings"
   },
   {
     title: 'BRACELETS',
     subtitle: 'Effortless Sophistication',
     image: getImageUrl("/product-sku/product-8.png"),
-    link: getImageUrl("/collections/bracelets")
+    link: "/collections/bracelets"
   }
 ];
 
@@ -42,7 +43,7 @@ function CategoryGrid() {
 
         <div className="category-grid">
           {categories.map((cat, index) => (
-            <a href={cat.link} key={index} className="category-card">
+            <Link to={cat.link} key={index} className="category-card">
               <div className="category-image-wrapper">
                 <img src={cat.image} alt={cat.title} className="category-image" />
               </div>
@@ -51,7 +52,7 @@ function CategoryGrid() {
                 <p className="category-subtitle">{cat.subtitle}</p>
                 <div className="category-arrow">→</div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
 
