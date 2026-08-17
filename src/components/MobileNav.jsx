@@ -1,30 +1,34 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Home, LayoutGrid, Search, Heart, User } from 'lucide-react';
 import './MobileNav.css';
 
 function MobileNav() {
+  const location = useLocation();
+  const path = location.pathname;
+
   return (
     <nav className="mobile-nav">
-      <a href="/" className="mobile-nav-item active">
+      <Link to="/" className={`mobile-nav-item ${path === '/' ? 'active' : ''}`}>
         <Home size={20} strokeWidth={1.5} />
         <span>HOME</span>
-      </a>
-      <a href="/collections" className="mobile-nav-item">
+      </Link>
+      <Link to="/collections" className={`mobile-nav-item ${path.startsWith('/collections') ? 'active' : ''}`}>
         <LayoutGrid size={20} strokeWidth={1.5} />
         <span>CATEGORIES</span>
-      </a>
-      <a href="/search" className="mobile-nav-item">
+      </Link>
+      <Link to="/search" className={`mobile-nav-item ${path === '/search' ? 'active' : ''}`}>
         <Search size={20} strokeWidth={1.5} />
         <span>SEARCH</span>
-      </a>
-      <a href="/wishlist" className="mobile-nav-item">
+      </Link>
+      <Link to="/wishlist" className={`mobile-nav-item ${path === '/wishlist' ? 'active' : ''}`}>
         <Heart size={20} strokeWidth={1.5} />
         <span>WISHLIST</span>
-      </a>
-      <a href="/account" className="mobile-nav-item">
+      </Link>
+      <Link to="/account" className={`mobile-nav-item ${path === '/account' ? 'active' : ''}`}>
         <User size={20} strokeWidth={1.5} />
         <span>ACCOUNT</span>
-      </a>
+      </Link>
     </nav>
   );
 }

@@ -16,7 +16,9 @@ function NotFound() {
           </div>
           
           <div className="not-found-image">
-            <div className="subtle-image-placeholder"></div>
+            <div className="subtle-image-placeholder">
+              <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80" alt="Missing jewellery piece" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
           </div>
         </div>
       </div>

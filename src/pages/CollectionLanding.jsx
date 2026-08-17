@@ -18,15 +18,15 @@ function CollectionLanding() {
   const buttonText = isGold ? "EXPLORE GOLD" : "SHOP ALL SILVER";
   
   const categories = isGold ? [
-    { title: "Gold Rings", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-rings" },
-    { title: "Gold Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/gold-necklaces" },
-    { title: "Gold Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/gold-earrings" },
-    { title: "Gold Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/gold-bracelets" }
+    { title: "Gold Rings", desc: "Timeless designs from minimal to statement.", link: "/collections/gold-rings", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
+    { title: "Gold Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/gold-necklaces", img: "https://images.unsplash.com/photo-1599643478514-4a4208a0d4db?auto=format&fit=crop&w=600&q=80" },
+    { title: "Gold Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/gold-earrings", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
+    { title: "Gold Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/gold-bracelets", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" }
   ] : [
-    { title: "Silver Rings", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-rings" },
-    { title: "Silver Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/silver-necklaces" },
-    { title: "Silver Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/silver-earrings" },
-    { title: "Silver Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/silver-bracelets" }
+    { title: "Silver Rings", desc: "Contemporary designs from minimal to statement.", link: "/collections/silver-rings", img: "https://images.unsplash.com/photo-1605100804763-247f67b2548e?auto=format&fit=crop&w=600&q=80" },
+    { title: "Silver Necklaces", desc: "Delicate details designed to sit close to your story.", link: "/collections/silver-necklaces", img: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=600&q=80" },
+    { title: "Silver Earrings", desc: "Everyday sparkle and elegant finishing touches.", link: "/collections/silver-earrings", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" },
+    { title: "Silver Bracelets", desc: "Refined pieces for effortless layering.", link: "/collections/silver-bracelets", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" }
   ];
 
   return (
@@ -49,7 +49,9 @@ function CollectionLanding() {
           <div className="clp-category-grid">
             {categories.map((cat, i) => (
               <Link to={cat.link} className="clp-category-card" key={i}>
-                <div className="clp-category-image-placeholder"></div>
+                <div className="clp-category-image-placeholder">
+                  <img src={cat.img} alt={cat.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <div className="clp-category-info">
                   <h3 className="clp-category-title">{cat.title}</h3>
                   <p className="clp-category-desc">{cat.desc}</p>

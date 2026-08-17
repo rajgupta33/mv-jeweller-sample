@@ -9,6 +9,7 @@ import CollectionBanners from '../components/CollectionBanners';
 import TrustMetrics from '../components/TrustMetrics';
 import CustomerReviews from '../components/CustomerReviews';
 import InstagramGallery from '../components/InstagramGallery';
+import BulkOrder from '../components/BulkOrder';
 import BrandStory from '../components/BrandStory';
 import { dummyProducts } from '../data/dummy';
 
@@ -32,6 +33,7 @@ function Home() {
       <CollectionBanners />
       <TrustMetrics />
       <CustomerReviews />
+      <BulkOrder />
       <InstagramGallery />
       <BrandStory />
     </>

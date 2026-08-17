@@ -1,27 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './AnnouncementBar.css';
 
 const messages = [
+  "PAN-INDIA DELIVERY",
   "COMPLIMENTARY SHIPPING",
-  "SECURE PAYMENTS",
-  "PREMIUM QUALITY",
-  "PAN-INDIA DELIVERY"
+  "SECURE PAYMENTS"
 ];
 
 function AnnouncementBar() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % messages.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
+  const marqueeText = messages.join(" • ");
 
   return (
     <div className="announcement-bar">
       <div className="announcement-bar-mobile">
-        <span>{messages[currentIndex]}</span>
+        <div className="marquee-content">
+          <span>{marqueeText}</span>
+          <span>{marqueeText}</span>
+        </div>
       </div>
       <div className="announcement-bar-desktop container">
         {messages.map((msg, index) => (

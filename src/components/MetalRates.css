@@ -1,179 +1,52 @@
 .metal-rates-wrapper {
-  background-color: var(--luxury-ivory);
-  border-bottom: 1px solid rgba(43, 42, 40, 0.1);
-  padding: 12px 0;
-  font-size: 0.75rem;
+  background-color: var(--deep-charcoal);
+  color: var(--luxury-ivory);
+  padding: 6px 0;
+  font-size: 0.7rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .metal-rates-container {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  justify-content: center;
   align-items: center;
 }
 
-.rate-title {
-  font-weight: 600;
-  letter-spacing: 0.1em;
+.rate-ticker {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
-  color: var(--charcoal);
 }
 
 .rate-icon {
-  color: var(--antique-gold);
+  color: var(--champagne-gold);
 }
 
-.rates-content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  justify-content: center;
-}
-
-.rate-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.rate-divider {
-  width: 1px;
-  height: 24px;
-  background-color: rgba(43, 42, 40, 0.2);
+.rate-label {
+  color: var(--champagne-gold);
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-right: 4px;
 }
 
 .metal-name {
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--charcoal);
+  font-weight: 600;
+  color: var(--luxury-ivory);
 }
 
 .metal-price {
-  font-weight: 600;
-  color: var(--primary-text);
+  font-weight: 400;
+  opacity: 0.9;
 }
 
-.rate-movement {
-  font-size: 0.7rem;
-  font-weight: 600;
+.rate-movement.up { color: var(--success-color); }
+.rate-movement.down { color: var(--negative-color); }
+
+.rate-divider {
+  color: var(--antique-gold);
+  opacity: 0.3;
+  margin: 0 4px;
 }
 
-.rate-movement.up {
-  color: var(--success-color);
-}
-
-.rate-movement.down {
-  color: var(--negative-color);
-}
-
-.rate-meta {
-  color: var(--charcoal);
-  opacity: 0.7;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  margin-top: 4px;
-}
-
-.view-rates-link {
-  font-weight: 600;
-  opacity: 1;
-  color: var(--charcoal);
-  transition: opacity 0.3s;
-}
-
-.view-rates-link:hover {
-  opacity: 0.7;
-}
-
-@media (max-width: 767px) {
-  .metal-rates-wrapper {
-    padding: 12px 0;
-  }
-
-  .metal-rates-container {
-    background-color: var(--white);
-    border: 1px solid rgba(43, 42, 40, 0.1);
-    border-radius: 16px;
-    padding: 16px 20px;
-    box-shadow: 0 4px 16px rgba(0,0,0,.06);
-    gap: 8px;
-  }
-
-  .rate-title {
-    font-size: 0.7rem;
-    width: 100%;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(43, 42, 40, 0.1);
-  }
-
-  .rates-content {
-    gap: 12px;
-  }
-
-  .rate-meta {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 0;
-    padding-top: 8px;
-    border-top: 1px solid rgba(43, 42, 40, 0.1);
-    flex-wrap: wrap;
-  }
-
-  .view-rates-link {
-    border: 1px solid var(--charcoal);
-    padding: 6px 16px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .metal-rates-wrapper {
-    padding: 0;
-    height: 48px;
-  }
-
-  .metal-rates-container {
-    flex-direction: row;
-    justify-content: space-between;
-    height: 100%;
-    gap: 0;
-  }
-
-  .rate-title {
-    border-right: 1px solid rgba(43, 42, 40, 0.1);
-    padding-right: 24px;
-  }
-
-  .rates-content {
-    flex-direction: row;
-    width: auto;
-    gap: 24px;
-  }
-
-  .rate-item {
-    flex-direction: row;
-    gap: 12px;
-  }
-
-  .rate-divider {
-    height: 48px;
-    background-color: rgba(43, 42, 40, 0.1);
-    margin: 0;
-  }
-  
-  .rate-meta {
-    margin-top: 0;
-    border-left: 1px solid rgba(43, 42, 40, 0.1);
-    padding-left: 24px;
-    height: 100%;
-  }
-}

@@ -14,7 +14,19 @@
 
 .announcement-bar-mobile {
   display: block;
-  animation: fadeIn 0.5s ease-in-out;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding-right: 40px; /* Space between the repeating phrases */
 }
 
 .announcement-bar-desktop {
@@ -52,7 +64,7 @@
   }
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }

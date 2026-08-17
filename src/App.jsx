@@ -11,6 +11,9 @@ import Cart from './pages/Cart';
 import NotFound from './pages/NotFound';
 import CartDrawer from './components/CartDrawer';
 
+import Account from './pages/Account';
+import Collections from './pages/Collections';
+
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -19,11 +22,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout onOpenCart={() => setIsCartOpen(true)} />}>
           <Route index element={<Home />} />
+          <Route path="collections" element={<Collections />} />
           <Route path="collections/:id" element={<CollectionLanding />} />
           <Route path="collections/:id/all" element={<ProductListing />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="search" element={<Search />} />
           <Route path="wishlist" element={<Wishlist />} />
+          <Route path="account" element={<Account />} />
           <Route path="cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Route>

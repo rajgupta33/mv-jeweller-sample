@@ -32,14 +32,14 @@ function Header({ onOpenCart }) {
         {/* Desktop Navigation */}
         <nav className={`desktop-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul className="nav-list">
-            <li><Link to="/collections/new-arrivals">NEW IN</Link></li>
-            <li><Link to="/collections/silver-jewellery">SILVER</Link></li>
-            <li><Link to="/collections/gold-jewellery">GOLD</Link></li>
-            <li><Link to="/collections/rings">RINGS</Link></li>
-            <li><Link to="/collections/necklaces">NECKLACES</Link></li>
-            <li><Link to="/collections/earrings">EARRINGS</Link></li>
-            <li><Link to="/collections/gifts">GIFTS</Link></li>
-            <li><Link to="/collections/all">COLLECTIONS</Link></li>
+            <li><Link to="/collections/new-arrivals" onClick={() => setIsMobileMenuOpen(false)}>NEW IN</Link></li>
+            <li><Link to="/collections/silver-jewellery" onClick={() => setIsMobileMenuOpen(false)}>SILVER</Link></li>
+            <li><Link to="/collections/gold-jewellery" onClick={() => setIsMobileMenuOpen(false)}>GOLD</Link></li>
+            <li><Link to="/collections/rings" onClick={() => setIsMobileMenuOpen(false)}>RINGS</Link></li>
+            <li><Link to="/collections/necklaces" onClick={() => setIsMobileMenuOpen(false)}>NECKLACES</Link></li>
+            <li><Link to="/collections/earrings" onClick={() => setIsMobileMenuOpen(false)}>EARRINGS</Link></li>
+            <li><Link to="/collections/gifts" onClick={() => setIsMobileMenuOpen(false)}>GIFTS</Link></li>
+            <li><Link to="/collections/all" onClick={() => setIsMobileMenuOpen(false)}>COLLECTIONS</Link></li>
           </ul>
         </nav>
 
