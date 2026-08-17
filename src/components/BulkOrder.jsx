@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { getImageUrl } from '../utils/image-util';
 import './BulkOrder.css';
 
 function BulkOrder() {
@@ -9,7 +10,7 @@ function BulkOrder() {
         <div className="bulk-order-card">
           <div className="bulk-order-image">
             <img 
-              src="https://images.unsplash.com/photo-1599643478514-4a4208a0d4db?auto=format&fit=crop&w=800&q=80" 
+              src={getImageUrl("/mv bulk.png")} 
               alt="Bulk Jewellery Orders" 
               className="bulk-img"
             />

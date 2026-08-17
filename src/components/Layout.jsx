@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import AnnouncementBar from './AnnouncementBar';
 import Header from './Header';
@@ -10,6 +10,10 @@ import MobileNav from './MobileNav';
 function Layout({ onOpenCart }) {
   const location = useLocation();
   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   // Newsletter logic: Show on most pages, but maybe hide on checkout/cart later if needed.
   // For now, show on all pages.
   const showNewsletter = true;
