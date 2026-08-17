@@ -29,7 +29,7 @@ function Footer() {
           
           <div className="footer-brand">
             <a href="/" className="logo footer-logo">
-              <img src="/mv logo.jpeg" alt="M.V Ornaments" className="logo-img" />
+              <img src="/mv transparent logo.png" alt="M.V Ornaments" className="logo-img" />
               <div className="logo-text">
                 <span className="logo-title">M.V ORNAMENTS</span>
                 <span className="logo-subtitle">QUALITY WITH CREATIVITY</span>

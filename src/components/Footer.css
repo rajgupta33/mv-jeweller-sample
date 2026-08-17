@@ -12,6 +12,10 @@
 }
 
 @media (max-width: 767px) {
+  .footer {
+    padding: 48px 0 20px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -19,15 +23,27 @@
 
   .footer-brand {
     grid-column: 1 / -1;
+    margin-bottom: 24px;
   }
 
   .footer-heading {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     font-size: 0.75rem;
   }
 
+  .footer-links {
+    gap: 10px;
+  }
+
   .footer-links a {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 20px;
+    font-size: 0.7rem;
   }
 }
 

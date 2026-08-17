@@ -39,20 +39,30 @@
 }
 
 @media (max-width: 767px) {
+  .promise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
   .promise-item {
     gap: 8px;
+    padding: 20px 12px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   }
 
   .promise-icon-wrapper {
     margin-bottom: 4px;
+    transform: scale(1.1);
   }
 
   .promise-title {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
   }
 
   .promise-desc {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     max-width: none;
   }
 }

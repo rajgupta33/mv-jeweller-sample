@@ -16,7 +16,7 @@ const Bestsellers = () => {
         {bestsellersData.map((item) => (
           <div key={item.id} className="product-card">
             <div className="product-image-placeholder">
-               <img src="/mv logo.jpeg" alt={item.name} className="product-image" />
+               <img src="https://placehold.co/400x500/eaeaea/888888?text=Product" alt={item.name} className="product-image" />
             </div>
             <div className="product-info">
               <h4 className="product-name">{item.name}</h4>

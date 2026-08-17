@@ -115,3 +115,22 @@
     flex-shrink: 0;
   }
 }
+
+@media (max-width: 767px) {
+  .newsletter-section {
+    padding: 40px 20px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-input {
+    width: 100%;
+    min-width: auto;
+  }
+  .newsletter-btn {
+    width: 100%;
+  }
+  .newsletter-title {
+    font-size: 1.1rem;
+  }
+}

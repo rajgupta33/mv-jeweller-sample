@@ -2,10 +2,13 @@ import React from 'react';
 import Hero from '../components/Hero';
 import CategoryGrid from '../components/CategoryGrid';
 import ProductRail from '../components/ProductRail';
-import CollectionBanners from '../components/CollectionBanners';
-import OccasionGrid from '../components/OccasionGrid';
-import GiftBanner from '../components/GiftBanner';
 import PromiseSection from '../components/PromiseSection';
+import GiftBanner from '../components/GiftBanner';
+import OccasionGrid from '../components/OccasionGrid';
+import CollectionBanners from '../components/CollectionBanners';
+import TrustMetrics from '../components/TrustMetrics';
+import CustomerReviews from '../components/CustomerReviews';
+import InstagramGallery from '../components/InstagramGallery';
 import BrandStory from '../components/BrandStory';
 import { dummyProducts } from '../data/dummy';
 
@@ -19,14 +22,17 @@ function Home() {
         products={dummyProducts.filter(p => p.isNew)} 
         viewAllLink="/collections/new-arrivals" 
       />
-      <CollectionBanners />
       <ProductRail 
         title="MOST LOVED" 
         products={dummyProducts.map(p => ({...p, isNew: false}))} 
       />
-      <OccasionGrid />
-      <GiftBanner />
       <PromiseSection />
+      <GiftBanner />
+      <OccasionGrid />
+      <CollectionBanners />
+      <TrustMetrics />
+      <CustomerReviews />
+      <InstagramGallery />
       <BrandStory />
     </>
   );

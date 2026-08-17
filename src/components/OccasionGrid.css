@@ -38,6 +38,20 @@
   letter-spacing: 0.05em;
 }
 
+@media (max-width: 767px) {
+  .occasion-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .occasion-card {
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .occasion-title {
+    font-size: 0.75rem;
+  }
+}
+
 @media (min-width: 768px) {
   .occasion-grid {
     grid-template-columns: repeat(4, 1fr);
