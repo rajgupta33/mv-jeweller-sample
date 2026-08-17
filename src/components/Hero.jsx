@@ -23,11 +23,11 @@ function Hero() {
         
         {/* Top Image Side */}
         <div className="hero-image-wrapper">
-          <picture>
+          <picture key={currentSlide}>
             <source media="(max-width: 1023px)" srcSet={getImageUrl(mobileImages[currentSlide])} />
             <source media="(min-width: 1024px)" srcSet={getImageUrl("/banner-image.png")} />
             {/* The img tag renders the image and we use a key to force re-render on mobile so it can transition or simply update src */}
-            <img key={currentSlide} src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image fade-in" />
+            <img src={getImageUrl("/banner-image.png")} alt="Modern Silver Jewellery Collection" className="hero-image fade-in" />
           </picture>
           <div className="hero-gradient-overlay"></div>
           
