@@ -26,8 +26,8 @@ function MetalRates() {
           }
         }
 
-        // 2. If no cache or it's expired, fetch fresh data
-        const API_URL = "https://api.metals.dev/v1/metal/authority?api_key=H2URCRZRDHIL6385PAX676285PAX6&authority=mcx&currency=INR&unit=kg";
+        // 2. If no cache or it's expired, fetch fresh data from our secure Vercel backend
+        const API_URL = "/api/rates";
         const response = await fetch(API_URL);
         const data = await response.json();
         
