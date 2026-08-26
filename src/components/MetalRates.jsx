@@ -52,6 +52,8 @@ function MetalRates() {
             timestamp: Date.now(),
             rates: newRates
           }));
+        } else {
+          throw new Error(data.error_message || "API returned failure status");
         }
       } catch (error) {
         console.error("Failed to fetch live MCX rates:", error);
