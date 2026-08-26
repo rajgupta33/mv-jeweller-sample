@@ -1,6 +1,6 @@
 .announcement-bar {
-  background-color: var(--charcoal);
-  color: var(--champagne-gold);
+  background-color: var(--mv-charcoal);
+  color: var(--muted-champagne);
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
@@ -43,7 +43,7 @@
 
 .announcement-item::before {
   content: "•";
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
   margin-right: 8px;
   display: none; /* Hide on first item, handled via CSS below */
 }

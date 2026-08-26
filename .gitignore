@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw asset uploads (Excluded to save Git repo size)
+mv data upload/
+mv new webp pics/
+edited_images_test/
+*.xlsx
+*.docx
+*.csv
+rename_assets.py

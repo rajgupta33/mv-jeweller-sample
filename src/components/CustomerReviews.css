@@ -1,5 +1,5 @@
 .reviews-section {
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
 }
 
 .reviews-wrapper {
@@ -9,11 +9,17 @@
 .reviews-rail {
   display: flex;
   gap: 16px;
+  /* Bleeds to the screen edges so cards run off-screen and read as scrollable,
+     instead of stopping dead at the container padding. */
+  margin-left: calc(var(--gutter) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  scroll-padding-left: var(--gutter);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 4px;
 }
 
 .reviews-rail::-webkit-scrollbar {
@@ -40,7 +46,7 @@
 .review-text {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   font-style: italic;
   flex: 1;
 }
@@ -54,12 +60,12 @@
 .review-name {
   font-weight: 600;
   font-size: 0.85rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .review-location {
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.6;
 }
 
@@ -78,12 +84,12 @@
   cursor: pointer;
   z-index: 2;
   transition: all 0.3s ease;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .reviews-nav:hover {
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
 }
 
 .reviews-nav--left {

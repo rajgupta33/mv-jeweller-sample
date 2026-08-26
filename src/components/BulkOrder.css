@@ -1,6 +1,6 @@
 .bulk-order-section {
   padding: 60px 0;
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
 }
 
 .bulk-order-card {
@@ -35,20 +35,20 @@
 .bulk-eyebrow {
   font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
   font-weight: 600;
   margin-bottom: 12px;
 }
 
 .bulk-title {
   font-size: 2.2rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 16px;
 }
 
 .bulk-text {
   font-size: 1rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.8;
   margin-bottom: 32px;
   line-height: 1.6;

@@ -1,8 +1,13 @@
+/* ==========================================================================
+   HEADER — mobile first
+   Phone/tablet: logo + icons, everything else lives in the slide-in drawer.
+   >= 1024px: the drawer is retired and the primary nav bar takes over.
+   ========================================================================== */
+
 .header {
-  background-color: var(--charcoal);
-  color: var(--champagne-gold);
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(201, 185, 133, 0.2);
+  background-color: var(--mv-charcoal);
+  color: var(--muted-champagne);
+  border-bottom: 1px solid rgba(201, 185, 133, 0.18);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -11,126 +16,458 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 8px;
+  min-height: 58px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
-/* Logo */
+/* ---------- Logo ---------- */
+
 .logo {
   display: flex;
   align-items: center;
-  gap: 12px;
-  color: var(--champagne-gold);
+  gap: 10px;
+  color: var(--muted-champagne);
+  margin-right: auto;
+  min-width: 0;
 }
 
 .logo-img {
   width: auto;
-  height: 40px;
+  height: 34px;
   object-fit: contain;
+  flex: none;
 }
 
 .logo-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .logo-title {
   font-family: var(--font-body);
   font-weight: 700;
-  font-size: 1.125rem;
-  letter-spacing: 0.1em;
+  font-size: 0.9375rem;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .logo-subtitle {
   font-family: var(--font-body);
-  font-size: 0.5rem;
+  font-size: 0.5625rem;
   letter-spacing: 0.15em;
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
+  opacity: 0.75;
+  white-space: nowrap;
 }
 
-/* Desktop Navigation */
-.desktop-nav {
-  display: none;
-}
+/* ---------- Icon buttons ---------- */
 
-.nav-list {
-  display: flex;
-  gap: 24px;
-}
-
-.nav-list a {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  transition: color 0.3s ease;
-  padding: 8px 0;
-}
-
-.nav-list a:hover {
-  color: var(--luxury-ivory);
-}
-
-/* Actions */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 2px;
+  flex: none;
 }
 
-.header-actions button,
-.header-actions a {
-  color: var(--champagne-gold);
-  transition: color 0.3s ease;
-  display: flex;
+.header-icon-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  color: var(--muted-champagne);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  transition: color 0.25s ease, background-color 0.25s ease;
 }
 
-.header-actions button:hover,
-.header-actions a:hover {
-  color: var(--luxury-ivory);
+.header-icon-btn:hover {
+  color: var(--pearl-ivory);
+  background-color: rgba(248, 246, 241, 0.06);
 }
 
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  color: var(--champagne-gold);
+.header-icon-btn:focus-visible,
+.drawer__close:focus-visible,
+.primary-nav__link:focus-visible {
+  outline: 2px solid var(--muted-champagne);
+  outline-offset: 2px;
+}
+
+.menu-btn {
+  margin-left: -8px;
+}
+
+/* Hidden on phones — these live in the drawer footer instead. */
+.hide-mobile {
+  display: none;
+}
+
+/* ---------- Desktop primary nav (hidden until 1024px) ---------- */
+
+.primary-nav {
+  display: none;
+}
+
+/* ==========================================================================
+   DRAWER
+   ========================================================================== */
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(14, 14, 13, 0.5);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 240ms ease, visibility 0s linear 240ms;
+  z-index: 998;
+}
+
+.drawer-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 240ms ease, visibility 0s;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: min(86vw, 360px);
+  background-color: var(--mv-charcoal);
+  color: var(--pearl-ivory);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 260ms;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.35);
+  overscroll-behavior: contain;
+}
+
+.drawer.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform 260ms cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s;
+}
+
+.drawer__head {
   display: flex;
   align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(201, 185, 133, 0.16);
+  flex: none;
 }
 
-/* Mobile Open State */
-@media (max-width: 1023px) {
-  .desktop-nav.mobile-open {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--charcoal);
-    padding: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .desktop-nav.mobile-open .nav-list {
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .hide-mobile {
-    display: none !important;
-  }
+.logo--drawer {
+  margin-right: auto;
 }
+
+.drawer__close {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-champagne);
+  background: none;
+  border: none;
+  flex: none;
+  margin-right: -8px;
+}
+
+.drawer__nav {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0;
+}
+
+.drawer__list {
+  list-style: none;
+}
+
+.drawer__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 15px 16px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  color: var(--pearl-ivory);
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(248, 246, 241, 0.07);
+}
+
+.drawer__toggle svg {
+  color: var(--muted-champagne);
+  transition: transform 220ms ease;
+  flex: none;
+}
+
+.drawer__section.is-open .drawer__toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Accordion: a collapsed panel has zero height, so its links are neither
+   tabbable nor hit-testable. */
+.drawer__subwrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 240ms ease;
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+.drawer__section.is-open .drawer__subwrap {
+  grid-template-rows: 1fr;
+}
+
+.drawer__sublist {
+  list-style: none;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.drawer__sublist a {
+  display: block;
+  padding: 12px 16px 12px 28px;
+  font-size: 0.875rem;
+  color: var(--pearl-ivory);
+  opacity: 0.78;
+}
+
+.drawer__sublist a:hover {
+  opacity: 1;
+}
+
+.drawer__foot {
+  flex: none;
+  padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(201, 185, 133, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.drawer__quick {
+  display: flex;
+  gap: 10px;
+}
+
+.drawer__quick a {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  border: 1px solid rgba(201, 185, 133, 0.35);
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-champagne);
+}
+
+.drawer__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--muted-champagne);
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   DESKTOP
+   ========================================================================== */
 
 @media (min-width: 1024px) {
-  .mobile-menu-btn {
+  .menu-btn,
+  .drawer,
+  .drawer-backdrop {
     display: none;
   }
-  .desktop-nav {
-    display: block;
+
+  .hide-mobile {
+    display: inline-flex;
   }
+
+  .header-container {
+    min-height: 76px;
+    gap: 20px;
+  }
+
+  /* The logo must never be squeezed by the nav — the nav gap absorbs instead. */
+  .logo {
+    margin-right: 0;
+    flex: none;
+  }
+
   .logo-img {
-    height: 48px;
+    height: 46px;
   }
+
   .logo-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .logo-subtitle {
+    font-size: 0.5625rem;
+  }
+
+  .primary-nav {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 0;
+  }
+
+  .primary-nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: clamp(9px, 1.35vw, 26px);
+  }
+
+  .primary-nav__item {
+    position: relative;
+  }
+
+  .primary-nav__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 26px 0;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    color: var(--muted-champagne);
+    cursor: pointer;
+    transition: color 0.25s ease;
+  }
+
+  .primary-nav__item:hover .primary-nav__link,
+  .primary-nav__item:focus-within .primary-nav__link {
+    color: var(--pearl-ivory);
+  }
+
+  .primary-nav__link svg {
+    transition: transform 0.25s ease;
+  }
+
+  .primary-nav__item:hover .primary-nav__link svg,
+  .primary-nav__item:focus-within .primary-nav__link svg {
+    transform: rotate(180deg);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 6px);
+    min-width: 224px;
+    background-color: var(--porcelain);
+    border: 1px solid rgba(167, 153, 104, 0.25);
+    border-radius: 2px;
+    box-shadow: 0 18px 40px rgba(20, 19, 18, 0.16);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
+  }
+
+  .primary-nav__item:hover .dropdown,
+  .primary-nav__item:focus-within .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 0s;
+  }
+
+  .dropdown__list {
+    list-style: none;
+  }
+
+  .dropdown__list a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.8125rem;
+    color: var(--mv-charcoal);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .dropdown__list a:hover {
+    background-color: var(--pearl-ivory);
+    color: var(--mv-charcoal);
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Between 1024 and 1279 the logo, seven nav items and four icons only just fit
+   on one row, so this band trims each of them rather than wrapping the nav. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .header-container {
+    gap: 12px;
+    min-height: 68px;
+  }
+
+  .logo-img {
+    height: 38px;
+  }
+
+  .logo-title {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+  }
+
+  .logo-subtitle {
+    display: none;
+  }
+
+  .primary-nav__link {
+    font-size: 0.6375rem;
+    letter-spacing: 0.07em;
+    padding: 22px 0;
+  }
+
+  .header-icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .drawer-backdrop,
+  .drawer__subwrap,
+  .drawer__toggle svg,
+  .dropdown {
+    transition: none;
   }
 }

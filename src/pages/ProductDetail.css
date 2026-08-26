@@ -56,12 +56,12 @@
   cursor: pointer;
   flex: 0 0 80px;
   aspect-ratio: 1/1;
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
   transition: border-color 0.2s ease;
 }
 
 .pdp-thumb-btn.active {
-  border-color: var(--charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 .pdp-thumb-btn img {
@@ -73,7 +73,7 @@
 
 .pdp-main-image {
   flex: 1;
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
   aspect-ratio: 1/1;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@
 .pdp-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 8px;
 }
 
@@ -126,7 +126,7 @@
 .pdp-price {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-right: 12px;
 }
 
@@ -158,7 +158,7 @@
   letter-spacing: 0.1em;
   padding: 6px 12px;
   background-color: var(--secondary-bg);
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   border-radius: 4px;
   margin-bottom: 24px;
 }
@@ -186,14 +186,14 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .pdp-size-guide-btn {
   background: transparent;
   border: none;
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   text-decoration: underline;
   cursor: pointer;
   padding: 0;
@@ -211,19 +211,19 @@
   background: transparent;
   border-radius: 50%;
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .pdp-size-btn:hover {
-  border-color: var(--charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 .pdp-size-btn.active {
-  background-color: var(--charcoal);
+  background-color: var(--mv-charcoal);
   color: var(--white);
-  border-color: var(--charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 /* Delivery */
@@ -235,7 +235,7 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 12px;
 }
 
@@ -255,11 +255,11 @@
 }
 
 .pdp-delivery-input-group input:focus {
-  border-color: var(--charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 .pdp-delivery-input-group button {
-  background: var(--charcoal);
+  background: var(--mv-charcoal);
   color: var(--white);
   border: none;
   padding: 0 24px;
@@ -279,7 +279,7 @@
 }
 
 .btn-add-to-bag {
-  background-color: var(--charcoal);
+  background-color: var(--mv-charcoal);
   color: var(--white);
   border: none;
   padding: 16px;
@@ -293,13 +293,13 @@
 }
 
 .btn-add-to-bag:hover {
-  background-color: var(--deep-charcoal);
+  background-color: var(--graphite);
 }
 
 .btn-wishlist {
   background: transparent;
-  border: 1px solid var(--charcoal);
-  color: var(--charcoal);
+  border: 1px solid var(--mv-charcoal);
+  color: var(--mv-charcoal);
   padding: 16px;
   font-size: 0.875rem;
   font-weight: 600;
@@ -315,7 +315,7 @@
 }
 
 .btn-wishlist:hover {
-  background: var(--luxury-ivory);
+  background: var(--pearl-ivory);
 }
 
 /* Assurances */
@@ -334,7 +334,7 @@
   align-items: center;
   gap: 12px;
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 /* Accordions */
@@ -357,7 +357,7 @@
   padding: 16px 0;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   cursor: pointer;
 }
 

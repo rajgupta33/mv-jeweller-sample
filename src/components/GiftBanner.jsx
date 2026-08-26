@@ -21,7 +21,7 @@ function GiftBanner() {
           </div>
           <div className="gift-image-wrapper">
             {/* Example image from the sku folder for the gift banner */}
-            <img src={getImageUrl("/product-sku/product-10.png")} alt="Luxurious Gifts" className="gift-image" />
+            <img src={getImageUrl("/mv-gift-edit.webp")} alt="Luxurious Gifts" className="gift-image" />
           </div>
         </div>
 

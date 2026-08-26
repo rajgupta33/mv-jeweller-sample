@@ -1,5 +1,5 @@
 .brand-story-section {
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
 }
 
 .brand-story-box {
@@ -21,13 +21,13 @@
 
 .brand-story-title {
   font-size: 2rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 24px;
 }
 
 .brand-story-text {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.9;
   margin-bottom: 16px;
   line-height: 1.6;
@@ -39,13 +39,13 @@
 
 .brand-story-content .link-arrow {
   margin-top: 16px;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .brand-story-image-wrapper {
   width: 100%;
   height: 250px;
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
 }
 
 .brand-story-image {

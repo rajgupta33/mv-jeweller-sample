@@ -1,24 +1,30 @@
 :root {
   /* Colors */
-  --charcoal: #2B2A28;
-  --deep-charcoal: #171715;
-  --champagne-gold: #C9B985;
-  --antique-gold: #A79968;
-  --luxury-ivory: #F8F5ED;
-  --warm-cream: #EFE8DA;
-  --primary-text: #1B1B19;
-  
-  --success-color: #2F7C31;
-  --negative-color: #C62828;
+  --pearl-ivory: #F8F6F1;
+  --porcelain: #FCFBF8;
+  --soft-platinum: #E8E6E1;
+  --mist-silver: #D9D8D4;
+  --mv-charcoal: #1C1C1A;
+  --graphite: #2C2B28;
+  --muted-champagne: #B9A46F;
+  --emerald-accent: #0D6B55;
+  --success-green: #277A4F;
+  --muted-red: #A8473B;
+  --primary-text: var(--mv-charcoal);
   --white: #FFFFFF;
 
   /* Typography */
   --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Manrope', sans-serif;
-  
-  /* Layout Spacing */
-  --section-spacing-desktop: 100px;
-  --section-spacing-mobile: 60px;
+
+  /* Layout — one fluid scale instead of a mobile value and a desktop value,
+     so the 768–1200 range stops falling between two stools. */
+  --section-spacing: clamp(48px, 7vw, 100px);
+  --gutter: clamp(16px, 3vw, 32px);
+  --container-max: 1360px;
+
+  /* Height of the fixed bottom nav on phones/tablets. */
+  --mobile-nav-height: 62px;
 }
 
 * {
@@ -27,20 +33,26 @@
   padding: 0;
 }
 
-body {
-  font-family: var(--font-body);
-  background-color: var(--luxury-ivory);
-  color: var(--primary-text);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  -webkit-text-size-adjust: 100%;
 }
 
+body {
+  font-family: var(--font-body);
+  background-color: var(--pearl-ivory);
+  color: var(--primary-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Nothing on the page may cause a sideways scroll. */
+  overflow-x: hidden;
+}
+
+/* Clears the fixed bottom nav, notch included. */
 @media (max-width: 1023px) {
   body {
-    padding-bottom: 72px;
+    padding-bottom: calc(var(--mobile-nav-height) + env(safe-area-inset-bottom));
     font-size: 15px;
-    line-height: 1.7;
   }
 }
 
@@ -49,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: var(--primary-text);
   line-height: 1.2;
+  text-wrap: balance;
 }
 
 a {
@@ -65,6 +78,7 @@ button {
   border: none;
   background: none;
   font-family: inherit;
+  color: inherit;
 }
 
 img {
@@ -72,88 +86,130 @@ img {
   display: block;
 }
 
-.container {
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 0 16px;
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 24px;
+/* iOS Safari zooms the whole page when a focused control is under 16px.
+   !important because component stylesheets set their own class-level sizes and
+   would otherwise win; this is a platform guard, not a design choice, and it
+   only applies below the desktop breakpoint. */
+@media (max-width: 1023px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
   }
+}
+
+:focus-visible {
+  outline: 2px solid var(--muted-champagne);
+  outline-offset: 2px;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  width: 100%;
 }
 
 /* Sections */
 section {
-  padding: var(--section-spacing-mobile) 0;
+  padding: var(--section-spacing) 0;
 }
 
-@media (min-width: 768px) {
-  section {
-    padding: var(--section-spacing-desktop) 0;
-  }
+/* ==========================================================================
+   Shared section heading
+   Canonical definition lives here — component stylesheets used to each ship
+   their own copy, and whichever imported last silently won.
+   ========================================================================== */
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 16px);
+  margin-bottom: clamp(28px, 4vw, 44px);
 }
 
-/* Utilities */
-.btn-primary {
-  background-color: var(--charcoal);
-  color: var(--luxury-ivory);
-  padding: 14px 32px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+.section-decoration {
+  color: var(--muted-champagne);
+  font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+  opacity: 0.6;
+  flex: none;
+}
+
+.section-title {
+  font-size: clamp(1.375rem, 4.6vw, 2rem);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: background-color 0.3s ease;
-  display: inline-block;
+  color: var(--mv-charcoal);
   text-align: center;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn-primary,
+.btn-outline,
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 2px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--mv-charcoal);
+  color: var(--pearl-ivory);
+  border: 1px solid var(--mv-charcoal);
 }
 
 .btn-primary:hover {
-  background-color: var(--deep-charcoal);
+  background-color: var(--graphite);
+  border-color: var(--graphite);
 }
 
 .btn-outline {
-  border: 1px solid var(--charcoal);
-  color: var(--charcoal);
-  padding: 14px 32px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
+  border: 1px solid var(--mv-charcoal);
+  color: var(--mv-charcoal);
 }
 
 .btn-outline:hover {
-  background-color: var(--charcoal);
-  color: var(--luxury-ivory);
+  background-color: var(--mv-charcoal);
+  color: var(--pearl-ivory);
 }
 
 .btn-outline-light {
-  border: 1px solid var(--luxury-ivory);
-  color: var(--luxury-ivory);
-  padding: 14px 32px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  display: inline-block;
-  text-align: center;
+  border: 1px solid var(--pearl-ivory);
+  color: var(--pearl-ivory);
 }
 
 .btn-outline-light:hover {
-  background-color: var(--luxury-ivory);
-  color: var(--charcoal);
+  background-color: var(--pearl-ivory);
+  color: var(--mv-charcoal);
 }
 
 .link-arrow {
   display: inline-flex;
   align-items: center;
+  /* An inline link is ~19px tall; this brings it up to a usable tap target. */
+  min-height: 44px;
   gap: 8px;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -174,4 +230,24 @@ section {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Lets a rail bleed to the screen edges inside a padded container, so the
+   cards run off-screen instead of stopping short of it. */
+.bleed-mobile {
+  margin-left: calc(var(--gutter) * -1);
+  margin-right: calc(var(--gutter) * -1);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

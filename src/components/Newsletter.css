@@ -1,5 +1,5 @@
 .newsletter-section {
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
   padding: 64px 0;
   position: relative;
   overflow: hidden;
@@ -48,13 +48,13 @@
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 8px;
 }
 
 .newsletter-text {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.8;
   margin-bottom: 24px;
 }
@@ -72,7 +72,7 @@
   background-color: transparent;
   font-family: var(--font-body);
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   border-radius: 2px;
   outline: none;
   transition: border-color 0.3s;
@@ -85,18 +85,18 @@
 }
 
 .newsletter-input:focus {
-  border-color: var(--antique-gold);
+  border-color: var(--muted-champagne);
 }
 
 .newsletter-btn {
-  background-color: var(--antique-gold);
-  border-color: var(--antique-gold);
+  background-color: var(--muted-champagne);
+  border-color: var(--muted-champagne);
   padding: 14px 32px;
 }
 
 .newsletter-btn:hover {
-  background-color: var(--charcoal);
-  border-color: var(--charcoal);
+  background-color: var(--mv-charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 @media (min-width: 768px) {

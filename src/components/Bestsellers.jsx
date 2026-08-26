@@ -2,10 +2,10 @@ import React from 'react';
 import './Bestsellers.css';
 
 const bestsellersData = [
-  { id: 1, name: 'Eternity Diamond Ring', price: '₹75,000' },
-  { id: 2, name: 'Classic Gold Hoop Earrings', price: '₹22,500' },
-  { id: 3, name: 'Pearl & Gold Pendant', price: '₹45,000' },
-  { id: 4, name: 'Tennis Diamond Bracelet', price: '₹1,50,000' },
+  { id: 1, name: 'Eternity Silver Ring', price: '₹7,500' },
+  { id: 2, name: 'Classic Silver Hoop Earrings', price: '₹2,500' },
+  { id: 3, name: 'Pearl & Silver Pendant', price: '₹4,500' },
+  { id: 4, name: 'Tennis Silver Bracelet', price: '₹15,000' },
 ];
 
 const Bestsellers = () => {

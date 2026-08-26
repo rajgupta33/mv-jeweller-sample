@@ -11,13 +11,13 @@
 
 .product-grid-title {
   font-size: 1.5rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin: 0;
 }
 
 .product-grid-count {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.7;
 }
 

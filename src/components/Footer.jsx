@@ -36,7 +36,7 @@ function Footer() {
           
           <div className="footer-brand">
             <a href="/" className="logo footer-logo">
-              <img src={getImageUrl("/mv-transparent-logo.png")} alt="M.V Ornaments" className="logo-img" />
+              <img src={getImageUrl("/mv-logo-mark.webp")} alt="M.V Ornaments" className="logo-img" />
               <div className="logo-text">
                 <span className="logo-title">M.V ORNAMENTS</span>
                 <span className="logo-subtitle">QUALITY WITH CREATIVITY</span>
@@ -53,10 +53,11 @@ function Footer() {
           <div className="footer-links-group">
             <h4 className="footer-heading">SHOP</h4>
             <ul className="footer-links">
-              <li><a href="/collections/all">All Jewellery</a></li>
-              <li><a href="/collections/silver-jewellery">Silver</a></li>
-              <li><a href="/collections/gold-jewellery">Gold</a></li>
-              <li><a href="/collections/new-arrivals">New Arrivals</a></li>
+              <li><a href="/collections/silver-jewellery">Silver Jewellery</a></li>
+              <li><a href="/collections/siara">SIARA</a></li>
+              <li><a href="/collections/silver-gifts">Silver Gifts & Articles</a></li>
+              <li><a href="/collections/silver-idols">Silver Idols</a></li>
+              <li><a href="/pages/gold-bullion">Gold Bullion Enquiry</a></li>
             </ul>
           </div>
 
@@ -66,16 +67,16 @@ function Footer() {
               <li><a href="/pages/faqs">FAQs</a></li>
               <li><a href="/pages/shipping">Shipping</a></li>
               <li><a href="/pages/returns">Returns</a></li>
-              <li><a href="/pages/size-guide">Size Guide</a></li>
+              <li><a href="/pages/economy-plan">M.V Economy Plan</a></li>
             </ul>
           </div>
 
           <div className="footer-links-group">
             <h4 className="footer-heading">ABOUT</h4>
             <ul className="footer-links">
-              <li><a href="/pages/our-story">Our Story</a></li>
-              <li><a href="/pages/craftsmanship">Craftsmanship</a></li>
-              <li><a href="/pages/care-guide">Care Guide</a></li>
+              <li><a href="/pages/about">Our Story</a></li>
+              <li><a href="/pages/bulk-orders">Bulk & Corporate Orders</a></li>
+              <li><a href="/pages/partner-with-us">Partner With Us</a></li>
               <li><a href="/pages/contact">Contact Us</a></li>
             </ul>
           </div>

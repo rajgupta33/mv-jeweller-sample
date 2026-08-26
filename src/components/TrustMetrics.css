@@ -1,6 +1,6 @@
 .trust-metrics-section {
-  background-color: var(--charcoal);
-  color: var(--luxury-ivory);
+  background-color: var(--mv-charcoal);
+  color: var(--pearl-ivory);
   padding: 48px 0;
 }
 
@@ -22,7 +22,7 @@
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 400;
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
   line-height: 1;
 }
 

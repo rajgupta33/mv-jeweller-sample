@@ -7,7 +7,7 @@
 .cart-page-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 40px;
 }
 
@@ -50,7 +50,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   text-transform: uppercase;
 }
 
@@ -78,7 +78,7 @@
 .cart-item-image-wrapper {
   width: 100px;
   height: 100px;
-  background: var(--luxury-ivory);
+  background: var(--pearl-ivory);
   flex-shrink: 0;
 }
 
@@ -111,7 +111,7 @@
 .cart-item-info h3 {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 4px;
 }
 
@@ -127,7 +127,7 @@
   border: none;
   padding: 0;
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   text-decoration: underline;
   margin-top: 8px;
   cursor: pointer;
@@ -157,7 +157,7 @@
   display: none;
   background: transparent;
   border: none;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.5;
   cursor: pointer;
   padding: 8px;
@@ -177,7 +177,7 @@
   flex: 1;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 @media (min-width: 768px) {
@@ -196,7 +196,7 @@
 
 .cart-gift-section h3 {
   font-size: 1.125rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 16px;
 }
 
@@ -206,11 +206,11 @@
   gap: 12px;
   cursor: pointer;
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .gift-checkbox input {
-  accent-color: var(--charcoal);
+  accent-color: var(--mv-charcoal);
   width: 16px;
   height: 16px;
 }
@@ -224,7 +224,7 @@
 .gift-message-box label {
   display: block;
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 8px;
 }
 
@@ -241,7 +241,7 @@
 }
 
 .gift-message-box textarea:focus {
-  border-color: var(--charcoal);
+  border-color: var(--mv-charcoal);
 }
 
 /* Sidebar */
@@ -267,7 +267,7 @@
 
 .order-summary h3 {
   font-size: 1.25rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 24px;
 }
 
@@ -285,7 +285,7 @@
   border-top: 1px solid var(--soft-border);
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 8px;
 }
 
@@ -299,7 +299,7 @@
 .btn-checkout-main {
   width: 100%;
   padding: 16px;
-  background: var(--charcoal);
+  background: var(--mv-charcoal);
   color: var(--white);
   border: none;
   font-size: 0.875rem;
@@ -312,7 +312,7 @@
 }
 
 .btn-checkout-main:hover {
-  background: var(--deep-charcoal);
+  background: var(--graphite);
 }
 
 .checkout-trust {
@@ -330,7 +330,7 @@
 
 .cart-empty h2 {
   font-size: 2rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 16px;
 }
 

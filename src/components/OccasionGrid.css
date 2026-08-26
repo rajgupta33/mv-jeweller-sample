@@ -1,5 +1,5 @@
 .occasion-section {
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
 }
 
 .occasion-grid {
@@ -18,18 +18,18 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   transition: all 0.3s ease;
 }
 
 .occasion-card:hover {
-  background-color: var(--warm-cream);
-  border-color: var(--antique-gold);
+  background-color: var(--soft-platinum);
+  border-color: var(--muted-champagne);
   transform: translateY(-2px);
 }
 
 .occasion-icon {
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
 }
 
 .occasion-title {

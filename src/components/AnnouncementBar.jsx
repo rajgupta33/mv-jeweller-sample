@@ -2,9 +2,10 @@ import React from 'react';
 import './AnnouncementBar.css';
 
 const messages = [
-  "PAN-INDIA DELIVERY",
-  "COMPLIMENTARY SHIPPING",
-  "SECURE PAYMENTS"
+  "20% OFF FIRST ELIGIBLE SILVER JEWELLERY ORDER",
+  "15-DAY REPLACEMENT",
+  "6-MONTH LIMITED WARRANTY",
+  "INTERNATIONAL SHIPPING AVAILABLE"
 ];
 
 function AnnouncementBar() {

@@ -10,7 +10,7 @@
 .plp-title {
   font-size: 2.5rem;
   font-family: var(--font-heading);
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 8px;
 }
 
@@ -31,7 +31,7 @@
 
 .plp-count {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.8;
 }
 
@@ -44,8 +44,8 @@
 .btn-filter-mobile {
   display: none;
   background: transparent;
-  border: 1px solid var(--charcoal);
-  color: var(--charcoal);
+  border: 1px solid var(--mv-charcoal);
+  color: var(--mv-charcoal);
   padding: 6px 12px;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
@@ -60,7 +60,7 @@
 
 .plp-sort label {
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   letter-spacing: 0.1em;
 }
 
@@ -68,7 +68,7 @@
   border: none;
   background: transparent;
   font-size: 0.75rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   font-weight: 600;
   letter-spacing: 0.05em;
   cursor: pointer;
@@ -96,7 +96,7 @@
 
 .filter-title {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   letter-spacing: 0.1em;
   margin-bottom: 16px;
   border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -114,7 +114,7 @@
 }
 
 .filter-option input[type="checkbox"] {
-  accent-color: var(--charcoal);
+  accent-color: var(--mv-charcoal);
   width: 16px;
   height: 16px;
 }

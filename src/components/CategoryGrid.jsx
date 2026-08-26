@@ -7,25 +7,25 @@ const categories = [
   {
     title: 'RINGS',
     subtitle: 'Timeless Elegance',
-    image: getImageUrl("/product-sku/product-2.png"),
+    image: getImageUrl("/mv-category-rings.webp"),
     link: "/collections/rings"
   },
   {
     title: 'NECKLACES',
     subtitle: 'Grace in Every Detail',
-    image: getImageUrl("/product-sku/product-5.png"),
+    image: getImageUrl("/mv-category-necklaces.webp"),
     link: "/collections/necklaces"
   },
   {
     title: 'EARRINGS',
     subtitle: 'Subtle. Stylish. Stunning.',
-    image: getImageUrl("/product-sku/product-6.png"),
+    image: getImageUrl("/mv-category-earrings.webp"),
     link: "/collections/earrings"
   },
   {
     title: 'BRACELETS',
     subtitle: 'Effortless Sophistication',
-    image: getImageUrl("/product-sku/product-8.png"),
+    image: getImageUrl("/mv-category-bracelets.webp"),
     link: "/collections/bracelets"
   }
 ];

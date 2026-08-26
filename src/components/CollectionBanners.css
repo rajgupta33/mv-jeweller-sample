@@ -1,5 +1,5 @@
 .collections-section {
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
 }
 
 .collections-container {
@@ -16,13 +16,13 @@
 }
 
 .silver-banner {
-  background-color: var(--charcoal);
-  color: var(--luxury-ivory);
+  background-color: var(--mv-charcoal);
+  color: var(--pearl-ivory);
 }
 
-.gold-banner {
-  background-color: #E2D1B3; /* Custom background for gold banner matching mockup */
-  color: var(--charcoal);
+.siara-banner {
+  background-color: var(--soft-platinum);
+  color: var(--mv-charcoal);
 }
 
 .collection-content {

@@ -63,11 +63,11 @@ function ProductDetail() {
             
             <div className="pdp-reviews">
               <div className="stars">
-                <Star size={16} fill="var(--charcoal)" color="var(--charcoal)" />
-                <Star size={16} fill="var(--charcoal)" color="var(--charcoal)" />
-                <Star size={16} fill="var(--charcoal)" color="var(--charcoal)" />
-                <Star size={16} fill="var(--charcoal)" color="var(--charcoal)" />
-                <Star size={16} fill="var(--charcoal)" color="var(--charcoal)" />
+                <Star size={16} fill="var(--mv-charcoal)" color="var(--mv-charcoal)" />
+                <Star size={16} fill="var(--mv-charcoal)" color="var(--mv-charcoal)" />
+                <Star size={16} fill="var(--mv-charcoal)" color="var(--mv-charcoal)" />
+                <Star size={16} fill="var(--mv-charcoal)" color="var(--mv-charcoal)" />
+                <Star size={16} fill="var(--mv-charcoal)" color="var(--mv-charcoal)" />
               </div>
               <span>(24)</span>
             </div>
@@ -169,17 +169,13 @@ function ProductDetail() {
               </div>
               
               <div className="accordion-item">
-                <button className="accordion-header" onClick={() => toggleAccordion('dimensions')}>
-                  <span>Dimensions & Weight</span>
-                  {activeAccordion === 'dimensions' ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                <button className="accordion-header" onClick={() => toggleAccordion('styling')}>
+                  <span>Styling / Gifting Note</span>
+                  {activeAccordion === 'styling' ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </button>
-                {activeAccordion === 'dimensions' && (
+                {activeAccordion === 'styling' && (
                   <div className="accordion-content">
-                    <ul>
-                      <li><strong>Gross Weight:</strong> 4.2g</li>
-                      <li><strong>Dimensions:</strong> 12mm x 12mm</li>
-                      <li><strong>Ring Size:</strong> {selectedSize}</li>
-                    </ul>
+                    <p>Designed for effortless layering. A thoughtful gift beautifully presented in our signature box.</p>
                   </div>
                 )}
               </div>
@@ -197,13 +193,25 @@ function ProductDetail() {
               </div>
 
               <div className="accordion-item">
+                <button className="accordion-header" onClick={() => toggleAccordion('warranty')}>
+                  <span>Warranty</span>
+                  {activeAccordion === 'warranty' ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                </button>
+                {activeAccordion === 'warranty' && (
+                  <div className="accordion-content">
+                    <p>6-Month Limited Warranty. Covers manufacturing defects. <a href="/pages/warranty">Learn more</a>.</p>
+                  </div>
+                )}
+              </div>
+
+              <div className="accordion-item">
                 <button className="accordion-header" onClick={() => toggleAccordion('shipping')}>
-                  <span>Shipping & Returns</span>
+                  <span>Replacement & Shipping</span>
                   {activeAccordion === 'shipping' ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
                 </button>
                 {activeAccordion === 'shipping' && (
                   <div className="accordion-content">
-                    <p>Free express shipping on all orders over ₹2000. 15-day easy returns policy.</p>
+                    <p>15-day replacement window for eligible domestic orders. Pan-India delivery available.</p>
                   </div>
                 )}
               </div>

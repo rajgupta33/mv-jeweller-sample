@@ -23,19 +23,21 @@ function Home() {
         products={dummyProducts.filter(p => p.isNew)} 
         viewAllLink="/collections/new-arrivals" 
       />
+      <CollectionBanners /> {/* Used for SIARA and Silver Banners */}
       <ProductRail 
         title="MOST LOVED" 
         products={dummyProducts.map(p => ({...p, isNew: false}))} 
       />
-      <PromiseSection />
-      <GiftBanner />
       <OccasionGrid />
-      <CollectionBanners />
-      <TrustMetrics />
-      <CustomerReviews />
+      <GiftBanner />
+      {/* Economy Plan Placeholder */}
       <BulkOrder />
+      {/* Gold Bullion Placeholder */}
+      <PromiseSection />
+      <CustomerReviews />
       <InstagramGallery />
       <BrandStory />
+      <TrustMetrics />
     </>
   );
 }

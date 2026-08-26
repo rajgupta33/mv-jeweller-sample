@@ -1,287 +1,550 @@
+/* ==========================================================================
+   HERO — mobile first
+   Layout ladder:
+     < 768px   photograph on top, tinted text panel below, seamed by a gradient
+     768–1023  two columns: text left, portrait photograph right
+     >= 1024   full-bleed landscape photograph with text overlaid on a scrim
+   Every colour comes from the per-slide --hero-* custom properties set in
+   Hero.jsx, so the type is always sampled from the photograph behind it.
+   ========================================================================== */
+
 .hero {
-  background-color: var(--deep-charcoal);
-  color: var(--luxury-ivory);
-  padding: 0; /* Override section padding for hero */
+  /* Fallbacks so the component still renders if a slide ships without a tone. */
+  --hero-surface: 250, 247, 242;
+  --hero-ink: #1B1A17;
+  --hero-ink-soft: #5A554D;
+  --hero-accent: #7C6428;
+  --hero-rule: rgba(124, 100, 40, 0.4);
+  --hero-cta-bg: #B99C57;
+  --hero-cta-bg-hover: #A5883F;
+  --hero-cta-fg: #1B1A17;
+  --hero-ghost-border: rgba(27, 26, 23, 0.3);
+  --hero-ghost-fg: #1B1A17;
+  --hero-ghost-hover-bg: #1B1A17;
+  --hero-ghost-hover-fg: #FAF7F2;
+  --hero-dot: rgba(27, 26, 23, 0.2);
+
+  --hero-media-h: clamp(260px, 37svh, 360px);
+
   position: relative;
+  width: 100%;
+  padding: 0;
   overflow: hidden;
+  background-color: rgb(var(--hero-surface));
 }
 
-.hero-grid {
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  outline: none;
+}
+
+/* All slides share one grid cell: the stage self-sizes to the tallest slide,
+   so switching slides never shifts the page. */
+.hero-stage {
+  display: grid;
+  grid-template-areas: 'stage';
+}
+
+.hero-slide {
+  grid-area: stage;
   display: flex;
   flex-direction: column;
-  padding: 0;
+  background-color: rgb(var(--hero-surface));
+  color: var(--hero-ink);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 550ms ease, visibility 0s linear 550ms;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 550ms ease, visibility 0s;
+}
+
+/* ---------- Media ---------- */
+
+.hero-media {
   position: relative;
-}
-
-/* Image & Overlay */
-.hero-image-wrapper {
   width: 100%;
-  position: relative;
+  height: var(--hero-media-h);
+  overflow: hidden;
+  flex: none;
 }
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-
-.hero-gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.hero-media__img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.75) 100%);
-  pointer-events: none;
-}
-
-.hero-slider-dots {
-  position: absolute;
-  bottom: 80px; /* Above the floating card */
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  z-index: 5;
-}
-
-.slider-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.4);
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.slider-dot.active {
-  background-color: #D4B67A;
-  width: 24px;
-  border-radius: 4px;
-}
-
-.hero-images-container {
-  display: grid;
-  width: 100%;
-}
-
-.hero-image {
-  grid-area: 1 / 1;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: center top;
+  object-position: var(--focus-mobile, 50% 40%);
+  display: block;
+  transform: scale(1.04);
+  transition: transform 7000ms ease-out;
 }
 
-.slide-fade {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+.hero-slide.is-active .hero-media__img {
+  transform: scale(1);
 }
 
-.slide-fade.active {
-  opacity: 1;
+/* Seams the photograph into the text panel so the two never read as two
+   stacked blocks. */
+.hero-media__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(var(--hero-surface), 0) 55%,
+    rgba(var(--hero-surface), 0.35) 78%,
+    rgba(var(--hero-surface), 0.85) 93%,
+    rgb(var(--hero-surface)) 100%
+  );
 }
 
-.desktop-only {
-  display: none;
-}
+/* ---------- Text panel ---------- */
 
-@media (min-width: 1024px) {
-  .mobile-only {
-    display: none !important;
-  }
-  .desktop-only {
-    display: block;
-    opacity: 1;
-  }
-  .hero-images-container {
-    height: 100%;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0.8; }
-  to { opacity: 1; }
-}
-
-/* Floating Content Card */
-.hero-content {
-  margin: -60px 16px 0 16px;
-  padding: 32px 24px;
-  background: rgba(17, 17, 17, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  position: relative;
-  z-index: 2;
+.hero-panel {
+  flex: 1;
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(var(--hero-surface));
 }
 
-/* Typography */
-.hero-eyebrow {
-  color: #D4B67A;
-  font-size: 12px;
-  letter-spacing: 4px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-}
-
-.hero-title {
-  color: var(--luxury-ivory);
-  font-size: 38px;
-  line-height: 1.1;
-  font-weight: 400;
-  margin-bottom: 16px;
+.hero-panel__inner {
+  width: 100%;
+  padding-top: 18px;
+  padding-bottom: 66px; /* room for the dots */
 }
 
 .hero-text {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #D0D0D0;
-  margin-bottom: 32px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  max-width: 34rem;
 }
 
-/* CTA Buttons */
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--hero-accent);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.hero-eyebrow__rule {
+  width: 26px;
+  height: 1px;
+  background-color: var(--hero-rule);
+  flex: none;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 7.6vw, 2.375rem);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--hero-ink);
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+
+.hero-copy {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--hero-ink-soft);
+  margin-bottom: 20px;
+  max-width: 32ch;
+}
+
+/* ---------- CTAs ---------- */
+
 .hero-ctas {
   display: flex;
-  flex-direction: row;
-  gap: 12px;
+  flex-direction: column;
+  gap: 9px;
 }
 
-.hero-ctas a {
-  flex: 1;
+.hero-cta {
   height: 48px;
-  border-radius: 14px;
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 0 24px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.btn-primary {
-  background-color: #D4B67A;
-  color: #111;
-  border: none;
-}
-
-.hero-gold-btn {
-  background-color: transparent;
-  border: 1px solid #D4B67A;
-  color: #D4B67A;
-}
-
-/* Trust Badges */
-.hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  padding: 32px 24px;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.trust-item {
+.hero-cta--primary {
+  background-color: var(--hero-cta-bg);
+  color: var(--hero-cta-fg);
+  border: 1px solid var(--hero-cta-bg);
+}
+
+.hero-cta--primary:hover {
+  background-color: var(--hero-cta-bg-hover);
+  border-color: var(--hero-cta-bg-hover);
+}
+
+.hero-cta--ghost {
+  background-color: transparent;
+  color: var(--hero-ghost-fg);
+  border: 1px solid var(--hero-ghost-border);
+}
+
+.hero-cta--ghost:hover {
+  background-color: var(--hero-ghost-hover-bg);
+  border-color: var(--hero-ghost-hover-bg);
+  color: var(--hero-ghost-hover-fg);
+}
+
+.hero-cta:focus-visible,
+.hero-arrow:focus-visible,
+.hero-dot:focus-visible {
+  outline: 2px solid var(--hero-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Controls ---------- */
+
+.hero-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-controls__inner {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #D4B67A;
+  justify-content: center;
+  gap: 4px;
 }
 
-.trust-icon {
-  font-size: 14px;
+.hero-arrow {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--hero-ink);
+  border: 1px solid var(--hero-ghost-border);
+  background-color: transparent;
+  pointer-events: auto;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-@media (min-width: 1024px) {
-  .hero-grid {
-    display: flex;
-    flex-direction: row;
+.hero-arrow:hover {
+  background-color: var(--hero-ghost-hover-bg);
+  border-color: var(--hero-ghost-hover-bg);
+  color: var(--hero-ghost-hover-fg);
+}
+
+.hero-dots {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  pointer-events: auto;
+}
+
+.hero-dot {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.hero-dot__track {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--hero-dot);
+  overflow: hidden;
+  transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.hero-dot.is-active .hero-dot__track {
+  width: 46px;
+}
+
+/* Fills left-to-right over the autoplay interval, so the wait is legible. */
+.hero-dot__fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: var(--hero-accent);
+  transform-origin: left center;
+  animation-name: hero-dot-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hero-dot-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* ---------- Trust strip ---------- */
+
+.hero-trust {
+  background-color: var(--porcelain);
+  border-top: 1px solid rgba(167, 153, 104, 0.18);
+  border-bottom: 1px solid rgba(167, 153, 104, 0.18);
+  padding: 18px 0;
+}
+
+.hero-trust__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+}
+
+.hero-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.hero-trust__icon {
+  color: var(--muted-champagne);
+  flex: none;
+}
+
+.hero-trust__text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hero-trust__text strong {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--mv-charcoal);
+  line-height: 1.3;
+}
+
+/* The qualifier copy is noise at phone width — restored from 768px up. */
+.hero-trust__text span {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--mv-charcoal);
+  opacity: 0.65;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   TABLET — text column beside the portrait photograph
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .hero-slide {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    min-height: 520px;
+  }
+
+  .hero-media {
+    width: 46%;
+    height: auto;
+    align-self: stretch;
+  }
+
+  /* Softens the vertical seam where the photograph meets the text column. */
+  .hero-media__scrim {
+    background: linear-gradient(
+      to right,
+      rgb(var(--hero-surface)) 0%,
+      rgba(var(--hero-surface), 0.55) 8%,
+      rgba(var(--hero-surface), 0) 26%
+    );
+  }
+
+  .hero-panel {
+    width: 54%;
     align-items: center;
-    padding: 0 24px; /* Restore container padding */
-    min-height: 70vh;
   }
 
-  .hero-image-wrapper {
-    width: 60%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
+  .hero-panel__inner {
+    padding-top: 40px;
+    padding-bottom: 84px;
   }
 
-  .hero-image {
-    height: 100%;
-    aspect-ratio: auto;
-    object-fit: cover;
-    object-position: right center;
-  }
-
-  .hero-gradient-overlay {
-    display: none;
-  }
-
-  .hero-slider-dots {
-    display: none;
-  }
-
-  .hero-content {
-    flex: none;
-    width: 45%;
-    padding: 80px 0;
-    margin: 0;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border: none;
-    position: relative;
-    z-index: 10;
-    border-radius: 0;
-    box-shadow: none;
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 4.5rem;
-    line-height: 1.1;
-  }
-
-  .hero-text {
-    font-size: 1.125rem;
+  .hero-copy {
+    font-size: 1rem;
+    max-width: 38ch;
+    margin-bottom: 30px;
   }
 
   .hero-ctas {
     flex-direction: row;
-    max-width: 480px;
-  }
-  
-  .hero-trust {
-    flex-direction: row;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 12px;
   }
 
-  .trust-item {
-    font-size: 0.875rem;
+  .hero-cta {
+    height: 52px;
+    flex: 0 1 auto;
+  }
+
+  .hero-controls__inner {
+    justify-content: flex-start;
+  }
+
+  .hero-trust {
+    padding: 22px 0;
+  }
+
+  .hero-trust__inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .hero-trust__item {
+    align-items: flex-start;
+  }
+
+  .hero-trust__icon {
+    margin-top: 2px;
+  }
+
+  .hero-trust__text strong {
+    font-size: 0.8125rem;
+  }
+
+  .hero-trust__text span {
+    display: block;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP — full-bleed landscape photograph, text on a horizontal scrim
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+  .hero-slide {
+    display: block;
+    position: relative;
+    min-height: 0;
+    height: clamp(560px, 45vw, 720px);
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-media__img {
+    object-position: var(--focus-desktop, 50% 50%);
+  }
+
+  .hero-media__scrim {
+    background: linear-gradient(
+      90deg,
+      rgba(var(--hero-surface), 0.94) 0%,
+      rgba(var(--hero-surface), 0.82) 26%,
+      rgba(var(--hero-surface), 0.42) 50%,
+      rgba(var(--hero-surface), 0) 74%
+    );
+  }
+
+  .hero-panel {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    background: transparent;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .hero-panel__inner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-text {
+    max-width: 33rem;
+    pointer-events: auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.75rem, 3.7vw, 4rem);
+    margin-bottom: 20px;
+  }
+
+  .hero-copy {
+    font-size: 1.0625rem;
+    max-width: 40ch;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta {
+    height: 54px;
+    padding: 0 30px;
+    font-size: 0.78125rem;
+  }
+
+  .hero-controls {
+    bottom: 40px;
+  }
+
+  .hero-controls__inner {
+    gap: 8px;
+  }
+
+  .hero-arrow {
+    display: inline-flex;
+  }
+
+  .hero-trust {
+    padding: 26px 0;
+  }
+}
+
+/* ==========================================================================
+   Motion preferences
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide,
+  .hero-media__img,
+  .hero-dot__track {
+    transition: none;
+  }
+
+  .hero-media__img,
+  .hero-slide.is-active .hero-media__img {
+    transform: none;
+  }
+
+  .hero-dot__fill {
+    animation: none;
+    transform: scaleX(1);
   }
 }

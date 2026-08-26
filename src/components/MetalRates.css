@@ -1,8 +1,8 @@
 .metal-rates-wrapper {
-  background-color: var(--deep-charcoal);
-  color: var(--luxury-ivory);
-  padding: 6px 0;
-  font-size: 0.7rem;
+  background-color: var(--graphite);
+  color: var(--pearl-ivory);
+  padding: 7px 0;
+  font-size: 0.75rem;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
@@ -29,11 +29,11 @@
 }
 
 .rate-icon {
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
 }
 
 .rate-label {
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
   letter-spacing: 0.1em;
   font-weight: 500;
   margin-right: 4px;
@@ -41,7 +41,7 @@
 
 .metal-name {
   font-weight: 600;
-  color: var(--luxury-ivory);
+  color: var(--pearl-ivory);
 }
 
 .metal-price {
@@ -49,18 +49,59 @@
   opacity: 0.9;
 }
 
-.rate-movement.up { color: var(--success-color); }
-.rate-movement.down { color: var(--negative-color); }
+.rate-movement.up { color: var(--success-green); }
+.rate-movement.down { color: var(--muted-red); }
 
 .rate-divider {
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
   opacity: 0.3;
   margin: 0 4px;
 }
 
+/* Phones: the label, the MCX note and the bullion link are what force the
+   ticker to scroll. Drop them and the two prices fit on one line. */
+/* On mobile, let the user swipe horizontally to see all info */
+.rate-ticker {
+  justify-content: flex-start;
+  padding: 0 16px; /* give some padding for swiping */
+}
+
+/* Ensure these display correctly on mobile */
+.rate-label,
+.mcx-info,
+.rate-divider--wide,
+.view-rates-link {
+  display: inline-flex;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
-  .rate-ticker {
-    justify-content: center;
+  .rate-label,
+  .mcx-info,
+  .rate-divider--wide {
+    display: inline;
+  }
+
+  .mcx-info {
+    font-size: 0.6875rem;
+    opacity: 0.8;
+    margin-left: 8px;
+  }
+
+  .view-rates-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    margin-left: auto;
+    padding-left: 12px;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    color: var(--muted-champagne);
+    white-space: nowrap;
+  }
+
+  .view-rates-link:hover {
+    color: var(--pearl-ivory);
   }
 }
 

@@ -52,7 +52,7 @@ function CustomerReviews() {
               <div key={review.id} className="review-card">
                 <div className="review-stars">
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} size={16} fill="var(--champagne-gold)" stroke="var(--champagne-gold)" />
+                    <Star key={i} size={16} fill="var(--muted-champagne)" stroke="var(--muted-champagne)" />
                   ))}
                 </div>
                 <p className="review-text">"{review.text}"</p>

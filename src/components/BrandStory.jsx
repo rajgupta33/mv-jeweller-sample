@@ -11,7 +11,7 @@ function BrandStory() {
           <div className="brand-story-content">
             <h2 className="brand-story-title">Jewellery with Character</h2>
             <p className="brand-story-text">
-              At M.V Ornaments, we believe jewellery should feel personal. Our collections bring together contemporary design, fine detailing and thoughtfully selected silver and gold pieces created for everyday expression and special moments alike.
+              At M.V Ornaments, we believe jewellery should feel personal. Our collections bring together contemporary design, fine detailing and thoughtfully selected silver pieces created for everyday expression and special moments alike.
             </p>
             <p className="brand-story-text">
               <strong>Quality With Creativity</strong> is more than our signature — it guides the way we select, present and deliver every M.V piece.

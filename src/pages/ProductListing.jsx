@@ -74,7 +74,6 @@ function ProductListing() {
             <div className="filter-group">
               <h3 className="filter-title">METAL</h3>
               <label className="filter-option"><input type="checkbox" /> 925 Sterling Silver</label>
-              <label className="filter-option"><input type="checkbox" /> Gold</label>
             </div>
             
             <div className="filter-group">

@@ -8,7 +8,7 @@ function Maintenance() {
     <div className="maintenance-container">
       <div className="maintenance-card">
         <img 
-          src={getImageUrl('/mv-transparent-logo.png')} 
+          src={getImageUrl('/mv-logo-mark.webp')} 
           alt="MV Ornaments Logo" 
           className="maintenance-logo"
         />

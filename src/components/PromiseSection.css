@@ -1,5 +1,5 @@
 .promise-section {
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
   border-top: 1px solid rgba(167, 153, 104, 0.2);
   border-bottom: 1px solid rgba(167, 153, 104, 0.2);
 }
@@ -19,7 +19,7 @@
 }
 
 .promise-icon-wrapper {
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
   margin-bottom: 8px;
 }
 
@@ -28,12 +28,12 @@
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .promise-desc {
   font-size: 0.875rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.8;
   max-width: 250px;
 }

@@ -1,10 +1,10 @@
 .gift-section {
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
 }
 
 .gift-banner {
-  background: linear-gradient(to right, var(--deep-charcoal), var(--charcoal));
-  color: var(--champagne-gold);
+  background: linear-gradient(to right, var(--graphite), var(--mv-charcoal));
+  color: var(--muted-champagne);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -26,12 +26,12 @@
   letter-spacing: 0.2em;
   font-weight: 600;
   margin-bottom: 16px;
-  color: var(--antique-gold);
+  color: var(--muted-champagne);
 }
 
 .gift-title {
   font-size: 2rem;
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
   margin-bottom: 16px;
 }
 
@@ -43,12 +43,12 @@
 }
 
 .gift-actions .btn-primary {
-  background-color: var(--champagne-gold);
-  color: var(--charcoal);
+  background-color: var(--muted-champagne);
+  color: var(--mv-charcoal);
 }
 
 .gift-actions .btn-primary:hover {
-  background-color: var(--antique-gold);
+  background-color: var(--muted-champagne);
 }
 
 .gift-image-wrapper {
@@ -58,7 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--charcoal);
+  background-color: var(--mv-charcoal);
 }
 
 .gift-image {
@@ -101,7 +101,7 @@
     letter-spacing: 0.2em;
     font-weight: 600;
     margin-bottom: 16px;
-    color: var(--antique-gold);
+    color: var(--muted-champagne);
   }
   
   .gift-actions, .gift-actions .btn-primary {

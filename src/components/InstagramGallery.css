@@ -1,5 +1,5 @@
 .instagram-section {
-  background-color: var(--luxury-ivory);
+  background-color: var(--pearl-ivory);
 }
 
 .instagram-handle {
@@ -9,7 +9,7 @@
   gap: 8px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 32px;
   margin-top: -24px;
 }
@@ -25,7 +25,7 @@
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 8px;
-  background-color: var(--warm-cream);
+  background-color: var(--soft-platinum);
 }
 
 .instagram-item img {
@@ -46,7 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--luxury-ivory);
+  color: var(--pearl-ivory);
   opacity: 0;
   transition: opacity 0.3s ease;
 }

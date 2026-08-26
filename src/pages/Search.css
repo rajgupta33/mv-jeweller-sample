@@ -13,7 +13,7 @@
 .search-title {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 24px;
 }
 
@@ -26,22 +26,25 @@
 
 .search-input {
   flex: 1;
-  padding: 16px 24px;
-  border: 1px solid var(--charcoal);
+  /* Without this a flex item refuses to shrink below the input's intrinsic
+     size, which pushed the search bar past the viewport on phones. */
+  min-width: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--mv-charcoal);
   border-radius: 4px;
   background: transparent;
   font-size: 1rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   outline: none;
 }
 
 .search-input::placeholder {
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   opacity: 0.5;
 }
 
 .search-submit {
-  background: var(--charcoal);
+  background: var(--mv-charcoal);
   color: var(--white);
   border: none;
   padding: 0 32px;
@@ -54,7 +57,7 @@
 }
 
 .search-submit:hover {
-  background: var(--deep-charcoal);
+  background: var(--graphite);
 }
 
 .search-results-header {
@@ -68,7 +71,7 @@
 
 .search-results-header h2 {
   font-size: 1.5rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
 }
 
 .search-count {
@@ -84,7 +87,7 @@
 
 .search-empty h2 {
   font-size: 2rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 16px;
 }
 
@@ -102,8 +105,8 @@
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--charcoal);
-  color: var(--charcoal);
+  border: 1px solid var(--mv-charcoal);
+  color: var(--mv-charcoal);
   padding: 12px 24px;
   text-decoration: none;
   font-size: 0.75rem;
@@ -114,7 +117,7 @@
 }
 
 .btn-outline:hover {
-  background: var(--charcoal);
+  background: var(--mv-charcoal);
   color: var(--white);
 }
 
@@ -124,7 +127,7 @@
 
 .search-suggestions h3 {
   font-size: 1rem;
-  color: var(--charcoal);
+  color: var(--mv-charcoal);
   margin-bottom: 24px;
   font-weight: 500;
 }
@@ -148,6 +151,6 @@
 }
 
 .suggestion-tags button:hover {
-  border-color: var(--charcoal);
-  color: var(--charcoal);
+  border-color: var(--mv-charcoal);
+  color: var(--mv-charcoal);
 }

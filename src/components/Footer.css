@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--deep-charcoal);
-  color: var(--luxury-ivory);
+  background-color: var(--graphite);
+  color: var(--pearl-ivory);
   padding: 64px 0 24px;
 }
 
@@ -57,12 +57,12 @@
 }
 
 .social-links a {
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
   transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-  color: var(--luxury-ivory);
+  color: var(--pearl-ivory);
 }
 
 .footer-heading {
@@ -70,7 +70,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: var(--champagne-gold);
+  color: var(--muted-champagne);
   margin-bottom: 24px;
 }
 
